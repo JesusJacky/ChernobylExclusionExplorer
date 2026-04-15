@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Test de Reservas - FCT</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			padding: 20px;
+			background: #f4f4f4;
+		}
+
+		.card {
+			background: white;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+			max-width: 500px;
+		}
+
+		input,
+		button {
+			display: block;
+			width: 100%;
+			margin: 10px 0;
+			padding: 8px;
+		}
+
+		button {
+			background: #007bff;
+			color: white;
+			border: none;
+			cursor: pointer;
+		}
+
+		#resultado {
+			margin-top: 20px;
+			padding: 10px;
+			border-radius: 4px;
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="card">
+		<h2>Crear Reserva Detallada</h2>
+
+		<label>ID Cliente (Ya existente):</label>
+		<input type="number" id="idCliente" value="1">
+
+		<label>ID Paquete (Ya existente):</label>
+		<input type="number" id="idPaquete" value="1">
+
+		<hr>
+
+		<label>Email de Contacto:</label>
+		<input type="email" id="email" placeholder="ejemplo@correo.com">
+
+		<label>Fecha del Viaje:</label>
+		<input type="date" id="fecha">
+
+		<label>Teléfono:</label>
+		<input type="text" id="telefono" placeholder="600000000">
+
+		<button onclick="enviar()">EJECUTAR PRUEBA</button>
+
+		<div id="resultado"></div>
+	</div>
+
+	<script>
+		async function enviar() {
+			const resDiv = document.getElementById('resultado');
+			const idC = document.getElementById('idCliente').value;
+			const idP = document.getElementById('idPaquete').value;
+
+			// Capturamos y limpiamos el teléfono con .trim()
+			const telLimpio = document.getElementById('telefono').value.trim();
+
+			const reservaData = {
+				fechaViaje: document.getElementById('fecha').value,
+				emailContacto: document.getElementById('email').value,
+				telefono: telLimpio,
+				confirmacionMayorEdad: true
+			};
+
+			// --- VALIDACIÓN FRONT-END ---
+			// Esta regex: empieza por 6-9 y sigue con 8 dígitos hasta el final
+			const regexTelefono = /^[6789]\d{8}$/;
+
+			// Si el usuario escribió algo pero no cumple la regex
+			if (telLimpio !== "" && !regexTelefono.test(telLimpio)) {
+				resDiv.style.display = 'block';
+				resDiv.style.backgroundColor = '#f8d7da'; // Rojo claro
+				resDiv.style.color = '#721c24';           // Texto oscuro
+				resDiv.style.padding = '10px';
+				resDiv.style.border = '1px solid #f5c6cb';
+				resDiv.innerHTML = "<strong>Error de formato:</strong> El número de teléfono debe tener 9 dígitos y empezar por 6, 7, 8 o 9.";
+
+				console.log("Validación fallida para: " + telLimpio); // Mira esto en F12
+				return;
+			}
+
+			try {
+				// Si pasa la validación, procedemos al fetch
+				const response = await fetch(`/reservas/proceso-reserva?idCliente=${idC}&idPaquete=${idP}`, {
+					method: 'POST',
+					headers: {'Content-Type': 'application/json'},
+					body: JSON.stringify(reservaData)
+				});
+
+				const textoRaw = await response.text();
+
+				resDiv.style.display = 'block';
+				if (response.ok) {
+					const data = JSON.parse(textoRaw);
+					resDiv.style.backgroundColor = '#d4edda';
+					resDiv.style.color = '#155724';
+					resDiv.innerHTML = `ÉXITO. Localizador: ${data.localizadorCliente}`;
+				} else {
+					resDiv.style.backgroundColor = '#f8d7da';
+					resDiv.style.color = '#721c24';
+					resDiv.innerHTML = `<strong>Error del Servidor:</strong> ${textoRaw}`;
+				}
+			} catch (err) {
+				resDiv.style.display = 'block';
+				resDiv.innerHTML = `<strong>Error JS:</strong> ${err.message}`;
+			}
+		}
+	</script>
+
+</body>
+
+</html>
