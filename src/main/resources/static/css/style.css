@@ -478,3 +478,87 @@ body.sbu-intranet .btn-sbu-accent:hover {
 		padding: 4px 10px;
 	}
 }
+
+/* =========================================
+   ESTILOS PARA FORMULARIOS Y PÁGINAS OSCURAS (Login, Registro, VIP)
+   ========================================= */
+body.dark-page {
+	background-color: #121212;
+}
+
+body.vip-page {
+	background-color: #121212;
+	color: #e0e0e0;
+}
+
+.login-card {
+	background: rgba(25, 25, 25, 0.95);
+	border: 1px solid #333;
+}
+
+.vip-card {
+	background: rgba(30, 30, 30, 0.98);
+	border: 1px solid #dc3545;
+	box-shadow: 0 0 15px rgba(220, 53, 69, 0.2);
+}
+
+.form-control-dark,
+.form-select-dark {
+	background-color: #222;
+	border: 1px solid #444;
+	color: #fff;
+}
+
+.form-control-dark:focus,
+.form-select-dark:focus {
+	background-color: #2a2a2a;
+	border-color: #b71c1c;
+	color: #fff;
+	box-shadow: 0 0 0 0.25rem rgba(183, 28, 28, 0.25);
+}
+
+/* Excepción para el focus del VIP usando variables de Bootstrap (rojo danger) */
+.vip-card .form-control-dark:focus,
+.vip-card .form-select-dark:focus {
+	border-color: #dc3545;
+	box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+.companion-card {
+	background-color: #1a1a1a;
+	border: 1px solid #444;
+	border-left: 4px solid #6c757d;
+}
+
+/* =========================================
+   ESTILOS PARA PROTOCOLOS DE SEGURIDAD
+   ========================================= */
+.lista-equipo li {
+	margin-bottom: 0.5rem;
+	font-size: 0.95rem;
+}
+
+.icono-lista {
+	width: 25px;
+	text-align: center;
+	margin-right: 10px;
+}
+
+/* Estilo para la Declaración de Responsabilidad */
+body.doc-legal-page .doc-legal {
+	background-color: #f8f9fa;
+	border: 1px solid #dee2e6;
+	border-left: 5px solid #dc3545;
+	color: #333;
+	font-family: 'Inter', sans-serif;
+}
+
+body.doc-legal-page .sello-sbu {
+	opacity: 0.1;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	pointer-events: none;
+}
