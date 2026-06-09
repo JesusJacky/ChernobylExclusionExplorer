@@ -3,134 +3,139 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Test de Reservas - FCT</title>
-	<style>
-		body {
-			font-family: sans-serif;
-			padding: 20px;
-			background: #f4f4f4;
-		}
-
-		.card {
-			background: white;
-			padding: 20px;
-			border-radius: 8px;
-			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-			max-width: 500px;
-		}
-
-		input,
-		button {
-			display: block;
-			width: 100%;
-			margin: 10px 0;
-			padding: 8px;
-		}
-
-		button {
-			background: #007bff;
-			color: white;
-			border: none;
-			cursor: pointer;
-		}
-
-		#resultado {
-			margin-top: 20px;
-			padding: 10px;
-			border-radius: 4px;
-			display: none;
-		}
-	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chernobyl Exclusion Explorer</title>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syncopate:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap"
+		rel="stylesheet">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-	<div class="card">
-		<h2>Crear Reserva Detallada</h2>
+	<div id="navbar-container"></div>
 
-		<label>ID Cliente (Ya existente):</label>
-		<input type="number" id="idCliente" value="1">
+	<header class="hero-section">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+					<p class="mono mb-3" style="color: var(--color-muted-rust); font-weight: 500;">Itinerarios Técnicos
+						Autorizados</p>
+					<h1 class="hero-title">Chernobyl <br> <span>Exclusion Explorer</span></h1>
+					<p class="hero-subtitle mx-auto mx-lg-0">
+						Adéntrese en la quietud de Prípiat y los sectores restringidos de la Central Nuclear. Un
+						recorrido de exploración histórica guiado bajo estrictas métricas de dosimetría activa y
+						seguridad de campo.
+					</p>
+					<a href="paquetes.html" class="btn btn-expedicion mono mt-2">Iniciar Exploración</a>
+				</div>
+				<div class="col-lg-6 text-center position-relative mt-5 mt-lg-0 d-flex flex-column align-items-center">
+					<img src="img/logo.png" alt="Emblema Chernobyl" class="logo-hero mb-4">
+					<a href="historia.html" class="btn-historia">
+						<i class="fa-solid fa-book-skull me-2"></i> Conoce la historia de la tragedia
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
 
-		<label>ID Paquete (Ya existente):</label>
-		<input type="number" id="idPaquete" value="1">
+	<section class="py-5 bg-light">
+		<div class="container">
+			<h2 class="text-center mb-2 mono">Protocolos de Inmersión Histórica</h2>
+			<p class="text-center text-muted mb-5">Cada nivel de peligrosidad le permite acceder a capas más profundas
+				de la historia y documentación del desastre.</p>
 
-		<hr>
+			<div class="row g-4">
+				<div class="col-md-4">
+					<div
+						class="card h-100 p-4 border-0 shadow-sm d-flex flex-column border-top border-success border-3">
+						<i class="fa-solid fa-book-open fa-2x mb-3 text-success"></i>
+						<h5>Nivel I: Riesgo Bajo</h5>
+						<p class="text-success small fw-bold mb-2">¿Listo para su primera inmersión en la memoria?</p>
+						<p class="small text-muted flex-grow-1">Acceso a monumentos y zonas perimetrales. Ideal para
+							entender las causas y el contexto geopolítico de 1986.</p>
+						<ul class="list-unstyled small text-start mt-2 mb-3">
+							<li><i class="fa-solid fa-check me-2"></i> Dosímetro individual</li>
+							<li><i class="fa-solid fa-check me-2"></i> Ropa técnica básica</li>
+						</ul>
+						<a href="protocolos.html#bajo" class="btn btn-success mt-auto text-white">Consultar
+							Protocolo</a>
+					</div>
+				</div>
 
-		<label>Email de Contacto:</label>
-		<input type="email" id="email" placeholder="ejemplo@correo.com">
+				<div class="col-md-4">
+					<div
+						class="card h-100 p-4 border-0 shadow-sm d-flex flex-column border-top border-warning border-3">
+						<i class="fa-solid fa-microscope fa-2x mb-3 text-warning"></i>
+						<h5>Nivel II: Riesgo Medio</h5>
+						<p class="text-warning small fw-bold mb-2">La historia está en los detalles. Vaya más allá.</p>
+						<p class="small text-muted flex-grow-1">Exploración de la arquitectura urbana de Prípiat. Acceso
+							a archivos documentales preservados y estructuras habitacionales.</p>
+						<ul class="list-unstyled small text-start mt-2 mb-3">
+							<li class="text-muted small"><em>Incluye Nivel I +:</em></li>
+							<li><i class="fa-solid fa-check me-2"></i> Mascarilla filtrante FFP3</li>
+							<li><i class="fa-solid fa-check me-2"></i> Traje estanco nivel B</li>
+						</ul>
+						<a href="protocolos.html#medio" class="btn btn-warning mt-auto text-white">Consultar
+							Protocolo</a>
+					</div>
+				</div>
 
-		<label>Fecha del Viaje:</label>
-		<input type="date" id="fecha">
+				<div class="col-md-4">
+					<div class="card h-100 p-4 border-0 shadow-sm d-flex flex-column border-top border-danger border-3">
+						<i class="fa-solid fa-radiation fa-2x mb-3 text-danger"></i>
+						<h5>Nivel III: Riesgo Alto</h5>
+						<p class="text-danger small fw-bold mb-2">Acceso restringido. Solo para expertos documentales.
+						</p>
+						<p class="small text-muted flex-grow-1">Inmersión en la zona cero: el Reactor 4 y el Bosque
+							Rojo. Testimonio directo de la tecnología y el sacrificio humano.</p>
+						<ul class="list-unstyled small text-start mt-2 mb-3">
+							<li class="text-muted small"><em>Incluye Nivel II +:</em></li>
+							<li><i class="fa-solid fa-check me-2"></i> Equipo respiración autónoma</li>
+							<li><i class="fa-solid fa-check me-2"></i> Traje aislante biológico</li>
+						</ul>
+						<a href="protocolos.html#alto" class="btn btn-danger mt-auto text-white">Consultar Protocolo</a>
+					</div>
+				</div>
+			</div>
 
-		<label>Teléfono:</label>
-		<input type="text" id="telefono" placeholder="600000000">
+			<div class="mt-5 p-3 text-center border-top">
+				<p class="text-muted small">
+					<i class="fa-solid fa-truck-fast me-2"></i> <strong>Logística corporativa:</strong> Todo el
+					equipamiento técnico mostrado es suministrado íntegramente por Chernobyl Exclusion Explorer.
+					Garantizamos equipo certificado para que su única preocupación sea documentar la historia.
+				</p>
+			</div>
+		</div>
+	</section>
 
-		<button onclick="enviar()">EJECUTAR PRUEBA</button>
+	<section class="intro-section">
+		<div class="container">
+			<div class="row g-5 align-items-center">
+				<div class="col-lg-6">
+					<span class="mono d-block mb-2" style="color: var(--color-muted-rust);">01 / Propósito de
+						campo</span>
+					<h2 class="intro-title text-uppercase">La memoria del silencio</h2>
+					<p class="text-muted mb-4">Nuestra plataforma regula el acceso técnico a los diferentes anillos de
+						seguridad de la Zona de Alienación. Diseñamos rutas basadas en la preservación documental,
+						permitiendo el estudio directo de la arquitectura soviética suspendida en el tiempo.</p>
+				</div>
+				<div class="col-lg-6">
+					<img src="img/noria.webp" class="img-fluid d-block w-100 shadow-sm rounded" alt="Noria de Prípiat">
+				</div>
+			</div>
+		</div>
+	</section>
 
-		<div id="resultado"></div>
-	</div>
+	<div id="footer-container" class="mt-auto"></div>
+	<div id="google_translate_element" style="display:none;"></div>
 
-	<script>
-		async function enviar() {
-			const resDiv = document.getElementById('resultado');
-			const idC = document.getElementById('idCliente').value;
-			const idP = document.getElementById('idPaquete').value;
-
-			// Capturamos y limpiamos el teléfono con .trim()
-			const telLimpio = document.getElementById('telefono').value.trim();
-
-			const reservaData = {
-				fechaViaje: document.getElementById('fecha').value,
-				emailContacto: document.getElementById('email').value,
-				telefono: telLimpio,
-				confirmacionMayorEdad: true
-			};
-
-			// --- VALIDACIÓN FRONT-END ---
-			// Esta regex: empieza por 6-9 y sigue con 8 dígitos hasta el final
-			const regexTelefono = /^[6789]\d{8}$/;
-
-			// Si el usuario escribió algo pero no cumple la regex
-			if (telLimpio !== "" && !regexTelefono.test(telLimpio)) {
-				resDiv.style.display = 'block';
-				resDiv.style.backgroundColor = '#f8d7da'; // Rojo claro
-				resDiv.style.color = '#721c24';           // Texto oscuro
-				resDiv.style.padding = '10px';
-				resDiv.style.border = '1px solid #f5c6cb';
-				resDiv.innerHTML = "<strong>Error de formato:</strong> El número de teléfono debe tener 9 dígitos y empezar por 6, 7, 8 o 9.";
-
-				console.log("Validación fallida para: " + telLimpio); // Mira esto en F12
-				return;
-			}
-
-			try {
-				// Si pasa la validación, procedemos al fetch
-				const response = await fetch(`/reservas/proceso-reserva?idCliente=${idC}&idPaquete=${idP}`, {
-					method: 'POST',
-					headers: {'Content-Type': 'application/json'},
-					body: JSON.stringify(reservaData)
-				});
-
-				const textoRaw = await response.text();
-
-				resDiv.style.display = 'block';
-				if (response.ok) {
-					const data = JSON.parse(textoRaw);
-					resDiv.style.backgroundColor = '#d4edda';
-					resDiv.style.color = '#155724';
-					resDiv.innerHTML = `ÉXITO. Localizador: ${data.localizadorCliente}`;
-				} else {
-					resDiv.style.backgroundColor = '#f8d7da';
-					resDiv.style.color = '#721c24';
-					resDiv.innerHTML = `<strong>Error del Servidor:</strong> ${textoRaw}`;
-				}
-			} catch (err) {
-				resDiv.style.display = 'block';
-				resDiv.innerHTML = `<strong>Error JS:</strong> ${err.message}`;
-			}
-		}
-	</script>
-
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript"
+		src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>

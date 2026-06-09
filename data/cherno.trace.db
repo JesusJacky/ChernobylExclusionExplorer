@@ -1,0 +1,483 @@
+2026-06-09 14:19:18.443906+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "([*]'victor.f', 'clave123', 'ROLE_CLIENTE', '2026-06-01T10:00:00'), ('elena.m', 'clave123', 'ROLE_CLIENTE', '2026-06-02T11:30:00'), ('alex.k', 'clave123', 'ROLE_CLIENTE', '2026-06-03T09:45:00'), ('antonio.s', 'clave123', 'ROLE_CLIENTE', '2026-06-04T12:00:00'), ('beatriz.l', 'clave123', 'ROLE_CLIENTE', '2026-05-20T16:20:00'), ('igor.v', 'clave123', 'ROLE_CLIENTE', '2026-05-21T14:10:00'), ('carmen.j', 'clave123', 'ROLE_CLIENTE', '2026-05-22T08:05:00'), ('sven.l', 'clave123', 'ROLE_CLIENTE', '2026-06-05T19:30:00'), ('yuki.s', 'clave123', 'ROLE_CLIENTE', '2026-06-06T20:15:00'), ('mateo.r', 'clave123', 'ROLE_CLIENTE', '2026-06-07T21:00:00'), ('paula.o', 'clave123', 'ROLE_CLIENTE', '2026-06-08T10:25:00'), ('adrian.m', 'clave123', 'ROLE_CLIENTE', '2026-06-09T11:40:00'), ('daniel.k', 'clave123', 'ROLE_CLIENTE', '2026-05-10T13:50:00'), ('leo.g', 'clave123', 'ROLE_CLIENTE', '2026-05-11T15:00:00'), ('emma.w', 'clave123', 'ROLE_CLIENTE', '2026-05-12T17:10:00'), ('hiroki.t', 'clave123', 'ROLE_CLIENTE', '2026-05-13T18:20:00'), ('sara.m', 'clave123', 'ROLE_CLIENTE', '2026-05-14T09:30:00'), ('noah.d', 'clave123', 'ROLE_CLIENTE', '2026-05-15T10:40:00'), ('sofia.p', 'clave123', 'ROLE_CLIENTE', '2026-05-16T11:50:00'), ('liam.o', 'clave123', 'ROLE_CLIENTE', '2026-05-17T12:00:00'), ('fatima.z', 'clave123', 'ROLE_CLIENTE', '2026-05-18T14:15:00'), ('andres.b', 'clave123', 'ROLE_CLIENTE', '2026-05-19T15:25:00'), ('clara.z', 'clave123', 'ROLE_CLIENTE', '2026-05-20T16:35:00'), ('biel.v', 'clave123', 'ROLE_CLIENTE', '2026-05-21T17:45:00'), ('dimitri.s', 'clave123', 'ROLE_CLIENTE', '2026-05-22T18:55:00'), ('valentina.g', 'clave123', 'ROLE_CLIENTE', '2026-05-23T08:10:00'), ('oliver.s', 'clave123', 'ROLE_CLIENTE', '2026-05-24T09:20:00'), ('marta.k', 'clave123', 'ROLE_CLIENTE', '2026-05-25T10:30:00'), ('lucas.m', 'clave123', 'ROLE_CLIENTE', '2026-05-26T11:40:00'), ('chloe.b', 'clave123', 'ROLE_CLIENTE', '2026-05-27T12:50:00')"; se esperaba "(, SELECT, TABLE, VALUES"
+Syntax error in SQL statement "([*]'victor.f', 'clave123', 'ROLE_CLIENTE', '2026-06-01T10:00:00'), ('elena.m', 'clave123', 'ROLE_CLIENTE', '2026-06-02T11:30:00'), ('alex.k', 'clave123', 'ROLE_CLIENTE', '2026-06-03T09:45:00'), ('antonio.s', 'clave123', 'ROLE_CLIENTE', '2026-06-04T12:00:00'), ('beatriz.l', 'clave123', 'ROLE_CLIENTE', '2026-05-20T16:20:00'), ('igor.v', 'clave123', 'ROLE_CLIENTE', '2026-05-21T14:10:00'), ('carmen.j', 'clave123', 'ROLE_CLIENTE', '2026-05-22T08:05:00'), ('sven.l', 'clave123', 'ROLE_CLIENTE', '2026-06-05T19:30:00'), ('yuki.s', 'clave123', 'ROLE_CLIENTE', '2026-06-06T20:15:00'), ('mateo.r', 'clave123', 'ROLE_CLIENTE', '2026-06-07T21:00:00'), ('paula.o', 'clave123', 'ROLE_CLIENTE', '2026-06-08T10:25:00'), ('adrian.m', 'clave123', 'ROLE_CLIENTE', '2026-06-09T11:40:00'), ('daniel.k', 'clave123', 'ROLE_CLIENTE', '2026-05-10T13:50:00'), ('leo.g', 'clave123', 'ROLE_CLIENTE', '2026-05-11T15:00:00'), ('emma.w', 'clave123', 'ROLE_CLIENTE', '2026-05-12T17:10:00'), ('hiroki.t', 'clave123', 'ROLE_CLIENTE', '2026-05-13T18:20:00'), ('sara.m', 'clave123', 'ROLE_CLIENTE', '2026-05-14T09:30:00'), ('noah.d', 'clave123', 'ROLE_CLIENTE', '2026-05-15T10:40:00'), ('sofia.p', 'clave123', 'ROLE_CLIENTE', '2026-05-16T11:50:00'), ('liam.o', 'clave123', 'ROLE_CLIENTE', '2026-05-17T12:00:00'), ('fatima.z', 'clave123', 'ROLE_CLIENTE', '2026-05-18T14:15:00'), ('andres.b', 'clave123', 'ROLE_CLIENTE', '2026-05-19T15:25:00'), ('clara.z', 'clave123', 'ROLE_CLIENTE', '2026-05-20T16:35:00'), ('biel.v', 'clave123', 'ROLE_CLIENTE', '2026-05-21T17:45:00'), ('dimitri.s', 'clave123', 'ROLE_CLIENTE', '2026-05-22T18:55:00'), ('valentina.g', 'clave123', 'ROLE_CLIENTE', '2026-05-23T08:10:00'), ('oliver.s', 'clave123', 'ROLE_CLIENTE', '2026-05-24T09:20:00'), ('marta.k', 'clave123', 'ROLE_CLIENTE', '2026-05-25T10:30:00'), ('lucas.m', 'clave123', 'ROLE_CLIENTE', '2026-05-26T11:40:00'), ('chloe.b', 'clave123', 'ROLE_CLIENTE', '2026-05-27T12:50:00')"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+('victor.f', 'clave123', 'ROLE_CLIENTE', '2026-06-01T10:00:00'), ('elena.m', 'clave123', 'ROLE_CLIENTE', '2026-06-02T11:30:00'), ('alex.k', 'clave123', 'ROLE_CLIENTE', '2026-06-03T09:45:00'), ('antonio.s', 'clave123', 'ROLE_CLIENTE', '2026-06-04T12:00:00'), ('beatriz.l', 'clave123', 'ROLE_CLIENTE', '2026-05-20T16:20:00'), ('igor.v', 'clave123', 'ROLE_CLIENTE', '2026-05-21T14:10:00'), ('carmen.j', 'clave123', 'ROLE_CLIENTE', '2026-05-22T08:05:00'), ('sven.l', 'clave123', 'ROLE_CLIENTE', '2026-06-05T19:30:00'), ('yuki.s', 'clave123', 'ROLE_CLIENTE', '2026-06-06T20:15:00'), ('mateo.r', 'clave123', 'ROLE_CLIENTE', '2026-06-07T21:00:00'), ('paula.o', 'clave123', 'ROLE_CLIENTE', '2026-06-08T10:25:00'), ('adrian.m', 'clave123', 'ROLE_CLIENTE', '2026-06-09T11:40:00'), ('daniel.k', 'clave123', 'ROLE_CLIENTE', '2026-05-10T13:50:00'), ('leo.g', 'clave123', 'ROLE_CLIENTE', '2026-05-11T15:00:00'), ('emma.w', 'clave123', 'ROLE_CLIENTE', '2026-05-12T17:10:00'), ('hiroki.t', 'clave123', 'ROLE_CLIENTE', '2026-05-13T18:20:00'), ('sara.m', 'clave123', 'ROLE_CLIENTE', '2026-05-14T09:30:00'), ('noah.d', 'clave123', 'ROLE_CLIENTE', '2026-05-15T10:40:00'), ('sofia.p', 'clave123', 'ROLE_CLIENTE', '2026-05-16T11:50:00'), ('liam.o', 'clave123', 'ROLE_CLIENTE', '2026-05-17T12:00:00'), ('fatima.z', 'clave123', 'ROLE_CLIENTE', '2026-05-18T14:15:00'), ('andres.b', 'clave123', 'ROLE_CLIENTE', '2026-05-19T15:25:00'), ('clara.z', 'clave123', 'ROLE_CLIENTE', '2026-05-20T16:35:00'), ('biel.v', 'clave123', 'ROLE_CLIENTE', '2026-05-21T17:45:00'), ('dimitri.s', 'clave123', 'ROLE_CLIENTE', '2026-05-22T18:55:00'), ('valentina.g', 'clave123', 'ROLE_CLIENTE', '2026-05-23T08:10:00'), ('oliver.s', 'clave123', 'ROLE_CLIENTE', '2026-05-24T09:20:00'), ('marta.k', 'clave123', 'ROLE_CLIENTE', '2026-05-25T10:30:00'), ('lucas.m', 'clave123', 'ROLE_CLIENTE', '2026-05-26T11:40:00'), ('chloe.b', 'clave123', 'ROLE_CLIENTE', '2026-05-27T12:50:00') [42001-240]
+2026-06-09 20:03:49.198927+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES ('Director', 'Sistema', NULL, '00000000A', '1970-01-01', 'Desconocida', 1, NULL, 'admin@sbu.gov', '000000000', 1, true, '2025-01-01', NULL), ('José', 'Álvarez', NULL, '11111111S', '1980-01-01', 'Española', 1, NULL, 'jose@sbu.gov', '600000001', 2, true, '2025-01-01', NULL), ('Mario', 'Pérez', NULL, '22222222E', '1995-05-05', 'Española', 1, NULL, 'mario@sbu.gov', '600000002', 3, true, '2025-01-01', NULL), ('Jesús', 'Hidalgo', 'Rodríguez', '33333333C', '1988-01-01', 'Española', 1, NULL, 'jesusjacky88@gmail.com', '600000003', 4, true, '2025-01-01', NULL), ('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 5, true, '2025-12-01', NULL), ('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 6, true, '2025-12-01', NULL), ('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 7, true, '2025-12-01', NULL), ('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 8, true, '2025-12-01', NULL), ('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 9, true, '2025-12-01', NULL), ('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 10, false, '2025-12-01', '2026-03-15'), ('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 11, false, '2025-12-01', '2026-04-20'), ('Sven', 'Lund', NULL, '55555555T', '1\000a\000aINSERT INTO reserva (fecha_viaje, email_contacto, precio_total, confirmacion_mayor_edad, estado, localizador_cliente, observaciones, telefono, tipo_paquete_id) VALUES\000a('2026-07-10', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-001', 'Madrugador', '+34600000001', 1),\000a('2026-08-05', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-002', 'Sin observaciones', '+34600000002', 2),\000a('2026-09-12', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CANCELADA', 'LOC-003', 'Cancelado por clima', '+34600000003', 1),\000a('2026-07-20', 'proyecto.chernobyl.explorer@gmail.com', 22000.0, 1, 'CONFIRMADA', 'LOC-004', 'Cliente solicita revisión ERA', '+34600000004', 7),\000a('2026-12-25', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'PENDIENTE', 'LOC-005', 'Reserva navideña', '+34600000005', 4),\000a('2026-08-15', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'CONFIRMADA', 'LOC-006', NULL, '+34600000006', 5),\000a('2026-07-01', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CANCELADA', 'LOC-007', 'Permisos de Estado denegados por SBU', '+34600000007', 9),\000a('2026-07-25', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-008', 'Documentalistas', '+34600000008', 6),\000a('2026-08-30', 'proyecto.chernobyl.explorer@gmail.com', 11500.0, 1, 'PENDIENTE', 'LOC-009', 'Pendiente de validar DNI', '+34600000009', 3),\000a('2026-09-05', 'proyecto.chernobyl.explorer@gmail.com', 38000.0, 1, 'CONFIRMADA', 'LOC-010', 'Requiere dosimetría avanzada', '+34600000010', 8),\000a('2026-11-11', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'CANCELADA', 'LOC-011', 'Causa mayor militar', '+34600000011', 4),\000a('2026-09-09', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-012', NULL, '+34600000012', 2),\000a('2026-10-25', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CONFIRMADA', 'LOC-013', 'Desea guía oficial en inglés', '+34600000013', 9),\000a('2026-10-10', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'PENDIENTE', 'LOC-014', 'Interesado en sesión fotográfica', '+34600000014', 5),\000a('2026-08-01', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-015', 'Cliente repetidor', '+34600000015', 6);\000a\000aINSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES \000a('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 4, true, '2025-12-01', NULL),\000a('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 5, true, '2025-12-01', NULL),\000a('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 6, true, '2025-12-01', NULL),\000a('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 7, true, '2025-12-01', NULL),\000a('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 8, true, '2025-12-01', NULL),\000a\000a('Igor', 'Volkov', NULL, '[*]33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 9, false, '2025-12-01', '2026-03-15'),\000a('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 10, false, '2025-12-01', '2026-04-20'),\000a('Sven', 'Lund', NULL, '55555555T', '1998-12-05', 'Sueca', 1, 8, 'sven@mail.com', '+34600111229', 11, false, '2025-12-01', '2026-05-10'),\000a\000a('Yuki', 'Sato', NULL, '66666666Y', '2010-07-20', 'Japonesa', 1, 9, 'yuki_padres@mail.com', '+81900111230', 12, true, '2025-12-01', NULL),  -- Menor CON consentimiento\000a('Mateo', 'Ricci', NULL, '77777777U', '2012-03-15', 'Italiana', 0, 10, 'mateo_tutor@mail.com', '+39600111231', 13, true, '2025-12-01', NULL), -- Menor SIN consentimiento\000a('Paula', 'Ortiz', 'Girona', '88888888I', '2009-01-10', 'Española', 0, 11, 'paula_madre@mail.com', '+34600111232', 14, true, '2025-12-01', NULL), -- Menor SIN consentimiento\000a('Adrián', 'Méndez', NULL, '99999999O', '2011-06-14', 'Española', 1, 12, 'adrian_padre@mail.com', '+34600111233', 15, true, '2025-12-01', NULL), -- Menor CON consentimiento\000a\000a('Daniel', 'Kuznetsov', NULL, '12312312P', '1990-10-10', 'Ucraniana', 1, 13, 'daniel@mail.com', '+380600111234', 16, true, '2025-12-01', NULL),\000a('Leo', 'García', 'Sanz', '23423423A', '1992-05-05', 'Argentina', 1, 14, 'leo@mail.com', '+549110111235', 17, true, '2025-12-01', NULL),\000a('Emma', 'Watson', NULL, '34534534S', '1994-08-19', 'Británica', 1, 15, 'emma@mail.com', '+44700111236', 18, true, '2025-12-01', NULL),\000a('Hiroki', 'Tanaka', NULL, '45645645D', '1996-02-28', 'Japonesa', 1, null, 'hiroki@mail.com', '+81900111237', 19, true, '2025-12-01', NULL),\000a('Sara', 'Müller', NULL, '56756756F', '1998-11-11', 'Alemana', 1, null, 'sara@mail.com', '+49150111238', 20, true, '2025-12-01', NULL),\000a('Noah', 'Dubois', NULL, '67867867G', '1991-03-01', 'Francesa', 1, null, 'noah@mail.com', '+33600111239', 21, true, '2025-12-01', NULL),\000a('Sofía', 'Pereira', NULL, '78978978H', '1993-12-25', 'Portuguesa', 1, null, 'sofia@mail.com', '+351900111240', 22, true, '2025-12-01', NULL),\000a('Liam', 'O Connor', NULL, '89089089J', '1962-07-07', 'Irlandesa', 1, null, 'liam@mail.com', '+353800111241', 23, true, '2025-12-01', NULL),\000a('Fatima', 'Zahra', NULL, '90190190K', '1995-02-14', 'Marroquí', 1, null, 'fatima@mail.com', '+212600111242', 24, true, '2025-12-01', NULL),\000a('Andrés', 'Bello', 'Paz', '01201201L', '1989-10-31', 'Chilena', 1, null, 'andres@mail.com', '+56900111243', 25, true, '2025-12-01', NULL),\000a\000a('Clara', 'Zetkin', NULL, '12341234M', '1950-06-20', 'Alemana', 1, null, 'clara@mail.com', '+49150111244', 26, false, '2025-12-01', '2026-01-10'),\000a('Biel', 'Vila', 'Junyent', '54325432N', '1997-09-09', 'Española', 1, null, 'biel@mail.com', '+34600111245', 27, true, '2025-12-01', NULL),\000a('Dimitri', 'Sokolov', NULL, '98769876B', '1980-05-20', 'Ucraniana', 1, null, 'dimitri@mail.com', '+380600111246', 28, false, '2025-12-01', '2026-02-28'),\000a('Valentina', 'Gómez', NULL, '65436543V', '1999-04-04', 'Mexicana', 1, null, 'valentina@mail.com', '+52550111247', 29, true, '2025-12-01', NULL),\000a('Oliver', 'Smith', NULL, '11112222Z', '1991-01-01', 'Británica', 1, null, 'oliver@mail.com', '+44700111248', 30, true, '2025-12-01', NULL),\000a('Marta', 'Krawczyk', NULL, '33334444X', '1995-12-12', 'Polaca', 1, null, 'marta@mail.com', '+48500111249', 31, true, '2025-12-01', NULL),\000a('Lucas', 'Moreno', 'Díaz', '44445555C', '2015-11-10', 'Española', 0, null, 'lucas_padres@mail.com', '+34600111250', 32, true, '2025-12-01', NULL), -- Menor muy joven sin consentimiento\000a('Chloe', 'Bourgeois', NULL, '55556666V', '1997-08-22', 'Francesa', 1, null, 'chloe@mail.com', '+33600111251', 33, false, '2025-12-01', '2026-06-01');"; se esperaba "Approximate numeric"
+Syntax error in SQL statement "INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES ('Director', 'Sistema', NULL, '00000000A', '1970-01-01', 'Desconocida', 1, NULL, 'admin@sbu.gov', '000000000', 1, true, '2025-01-01', NULL), ('José', 'Álvarez', NULL, '11111111S', '1980-01-01', 'Española', 1, NULL, 'jose@sbu.gov', '600000001', 2, true, '2025-01-01', NULL), ('Mario', 'Pérez', NULL, '22222222E', '1995-05-05', 'Española', 1, NULL, 'mario@sbu.gov', '600000002', 3, true, '2025-01-01', NULL), ('Jesús', 'Hidalgo', 'Rodríguez', '33333333C', '1988-01-01', 'Española', 1, NULL, 'jesusjacky88@gmail.com', '600000003', 4, true, '2025-01-01', NULL), ('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 5, true, '2025-12-01', NULL), ('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 6, true, '2025-12-01', NULL), ('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 7, true, '2025-12-01', NULL), ('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 8, true, '2025-12-01', NULL), ('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 9, true, '2025-12-01', NULL), ('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 10, false, '2025-12-01', '2026-03-15'), ('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 11, false, '2025-12-01', '2026-04-20'), ('Sven', 'Lund', NULL, '55555555T', '1\000a\000aINSERT INTO reserva (fecha_viaje, email_contacto, precio_total, confirmacion_mayor_edad, estado, localizador_cliente, observaciones, telefono, tipo_paquete_id) VALUES\000a('2026-07-10', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-001', 'Madrugador', '+34600000001', 1),\000a('2026-08-05', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-002', 'Sin observaciones', '+34600000002', 2),\000a('2026-09-12', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CANCELADA', 'LOC-003', 'Cancelado por clima', '+34600000003', 1),\000a('2026-07-20', 'proyecto.chernobyl.explorer@gmail.com', 22000.0, 1, 'CONFIRMADA', 'LOC-004', 'Cliente solicita revisión ERA', '+34600000004', 7),\000a('2026-12-25', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'PENDIENTE', 'LOC-005', 'Reserva navideña', '+34600000005', 4),\000a('2026-08-15', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'CONFIRMADA', 'LOC-006', NULL, '+34600000006', 5),\000a('2026-07-01', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CANCELADA', 'LOC-007', 'Permisos de Estado denegados por SBU', '+34600000007', 9),\000a('2026-07-25', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-008', 'Documentalistas', '+34600000008', 6),\000a('2026-08-30', 'proyecto.chernobyl.explorer@gmail.com', 11500.0, 1, 'PENDIENTE', 'LOC-009', 'Pendiente de validar DNI', '+34600000009', 3),\000a('2026-09-05', 'proyecto.chernobyl.explorer@gmail.com', 38000.0, 1, 'CONFIRMADA', 'LOC-010', 'Requiere dosimetría avanzada', '+34600000010', 8),\000a('2026-11-11', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'CANCELADA', 'LOC-011', 'Causa mayor militar', '+34600000011', 4),\000a('2026-09-09', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-012', NULL, '+34600000012', 2),\000a('2026-10-25', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CONFIRMADA', 'LOC-013', 'Desea guía oficial en inglés', '+34600000013', 9),\000a('2026-10-10', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'PENDIENTE', 'LOC-014', 'Interesado en sesión fotográfica', '+34600000014', 5),\000a('2026-08-01', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-015', 'Cliente repetidor', '+34600000015', 6);\000a\000aINSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES \000a('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 4, true, '2025-12-01', NULL),\000a('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 5, true, '2025-12-01', NULL),\000a('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 6, true, '2025-12-01', NULL),\000a('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 7, true, '2025-12-01', NULL),\000a('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 8, true, '2025-12-01', NULL),\000a\000a('Igor', 'Volkov', NULL, '[*]33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 9, false, '2025-12-01', '2026-03-15'),\000a('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 10, false, '2025-12-01', '2026-04-20'),\000a('Sven', 'Lund', NULL, '55555555T', '1998-12-05', 'Sueca', 1, 8, 'sven@mail.com', '+34600111229', 11, false, '2025-12-01', '2026-05-10'),\000a\000a('Yuki', 'Sato', NULL, '66666666Y', '2010-07-20', 'Japonesa', 1, 9, 'yuki_padres@mail.com', '+81900111230', 12, true, '2025-12-01', NULL),  -- Menor CON consentimiento\000a('Mateo', 'Ricci', NULL, '77777777U', '2012-03-15', 'Italiana', 0, 10, 'mateo_tutor@mail.com', '+39600111231', 13, true, '2025-12-01', NULL), -- Menor SIN consentimiento\000a('Paula', 'Ortiz', 'Girona', '88888888I', '2009-01-10', 'Española', 0, 11, 'paula_madre@mail.com', '+34600111232', 14, true, '2025-12-01', NULL), -- Menor SIN consentimiento\000a('Adrián', 'Méndez', NULL, '99999999O', '2011-06-14', 'Española', 1, 12, 'adrian_padre@mail.com', '+34600111233', 15, true, '2025-12-01', NULL), -- Menor CON consentimiento\000a\000a('Daniel', 'Kuznetsov', NULL, '12312312P', '1990-10-10', 'Ucraniana', 1, 13, 'daniel@mail.com', '+380600111234', 16, true, '2025-12-01', NULL),\000a('Leo', 'García', 'Sanz', '23423423A', '1992-05-05', 'Argentina', 1, 14, 'leo@mail.com', '+549110111235', 17, true, '2025-12-01', NULL),\000a('Emma', 'Watson', NULL, '34534534S', '1994-08-19', 'Británica', 1, 15, 'emma@mail.com', '+44700111236', 18, true, '2025-12-01', NULL),\000a('Hiroki', 'Tanaka', NULL, '45645645D', '1996-02-28', 'Japonesa', 1, null, 'hiroki@mail.com', '+81900111237', 19, true, '2025-12-01', NULL),\000a('Sara', 'Müller', NULL, '56756756F', '1998-11-11', 'Alemana', 1, null, 'sara@mail.com', '+49150111238', 20, true, '2025-12-01', NULL),\000a('Noah', 'Dubois', NULL, '67867867G', '1991-03-01', 'Francesa', 1, null, 'noah@mail.com', '+33600111239', 21, true, '2025-12-01', NULL),\000a('Sofía', 'Pereira', NULL, '78978978H', '1993-12-25', 'Portuguesa', 1, null, 'sofia@mail.com', '+351900111240', 22, true, '2025-12-01', NULL),\000a('Liam', 'O Connor', NULL, '89089089J', '1962-07-07', 'Irlandesa', 1, null, 'liam@mail.com', '+353800111241', 23, true, '2025-12-01', NULL),\000a('Fatima', 'Zahra', NULL, '90190190K', '1995-02-14', 'Marroquí', 1, null, 'fatima@mail.com', '+212600111242', 24, true, '2025-12-01', NULL),\000a('Andrés', 'Bello', 'Paz', '01201201L', '1989-10-31', 'Chilena', 1, null, 'andres@mail.com', '+56900111243', 25, true, '2025-12-01', NULL),\000a\000a('Clara', 'Zetkin', NULL, '12341234M', '1950-06-20', 'Alemana', 1, null, 'clara@mail.com', '+49150111244', 26, false, '2025-12-01', '2026-01-10'),\000a('Biel', 'Vila', 'Junyent', '54325432N', '1997-09-09', 'Española', 1, null, 'biel@mail.com', '+34600111245', 27, true, '2025-12-01', NULL),\000a('Dimitri', 'Sokolov', NULL, '98769876B', '1980-05-20', 'Ucraniana', 1, null, 'dimitri@mail.com', '+380600111246', 28, false, '2025-12-01', '2026-02-28'),\000a('Valentina', 'Gómez', NULL, '65436543V', '1999-04-04', 'Mexicana', 1, null, 'valentina@mail.com', '+52550111247', 29, true, '2025-12-01', NULL),\000a('Oliver', 'Smith', NULL, '11112222Z', '1991-01-01', 'Británica', 1, null, 'oliver@mail.com', '+44700111248', 30, true, '2025-12-01', NULL),\000a('Marta', 'Krawczyk', NULL, '33334444X', '1995-12-12', 'Polaca', 1, null, 'marta@mail.com', '+48500111249', 31, true, '2025-12-01', NULL),\000a('Lucas', 'Moreno', 'Díaz', '44445555C', '2015-11-10', 'Española', 0, null, 'lucas_padres@mail.com', '+34600111250', 32, true, '2025-12-01', NULL), -- Menor muy joven sin consentimiento\000a('Chloe', 'Bourgeois', NULL, '55556666V', '1997-08-22', 'Francesa', 1, null, 'chloe@mail.com', '+33600111251', 33, false, '2025-12-01', '2026-06-01');"; expected "Approximate numeric"; SQL statement:
+INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES ('Director', 'Sistema', NULL, '00000000A', '1970-01-01', 'Desconocida', 1, NULL, 'admin@sbu.gov', '000000000', 1, true, '2025-01-01', NULL), ('José', 'Álvarez', NULL, '11111111S', '1980-01-01', 'Española', 1, NULL, 'jose@sbu.gov', '600000001', 2, true, '2025-01-01', NULL), ('Mario', 'Pérez', NULL, '22222222E', '1995-05-05', 'Española', 1, NULL, 'mario@sbu.gov', '600000002', 3, true, '2025-01-01', NULL), ('Jesús', 'Hidalgo', 'Rodríguez', '33333333C', '1988-01-01', 'Española', 1, NULL, 'jesusjacky88@gmail.com', '600000003', 4, true, '2025-01-01', NULL), ('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 5, true, '2025-12-01', NULL), ('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 6, true, '2025-12-01', NULL), ('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 7, true, '2025-12-01', NULL), ('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 8, true, '2025-12-01', NULL), ('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 9, true, '2025-12-01', NULL), ('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 10, false, '2025-12-01', '2026-03-15'), ('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 11, false, '2025-12-01', '2026-04-20'), ('Sven', 'Lund', NULL, '55555555T', '1
+
+INSERT INTO reserva (fecha_viaje, email_contacto, precio_total, confirmacion_mayor_edad, estado, localizador_cliente, observaciones, telefono, tipo_paquete_id) VALUES
+('2026-07-10', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-001', 'Madrugador', '+34600000001', 1),
+('2026-08-05', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-002', 'Sin observaciones', '+34600000002', 2),
+('2026-09-12', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CANCELADA', 'LOC-003', 'Cancelado por clima', '+34600000003', 1),
+('2026-07-20', 'proyecto.chernobyl.explorer@gmail.com', 22000.0, 1, 'CONFIRMADA', 'LOC-004', 'Cliente solicita revisión ERA', '+34600000004', 7),
+('2026-12-25', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'PENDIENTE', 'LOC-005', 'Reserva navideña', '+34600000005', 4),
+('2026-08-15', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'CONFIRMADA', 'LOC-006', NULL, '+34600000006', 5),
+('2026-07-01', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CANCELADA', 'LOC-007', 'Permisos de Estado denegados por SBU', '+34600000007', 9),
+('2026-07-25', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-008', 'Documentalistas', '+34600000008', 6),
+('2026-08-30', 'proyecto.chernobyl.explorer@gmail.com', 11500.0, 1, 'PENDIENTE', 'LOC-009', 'Pendiente de validar DNI', '+34600000009', 3),
+('2026-09-05', 'proyecto.chernobyl.explorer@gmail.com', 38000.0, 1, 'CONFIRMADA', 'LOC-010', 'Requiere dosimetría avanzada', '+34600000010', 8),
+('2026-11-11', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'CANCELADA', 'LOC-011', 'Causa mayor militar', '+34600000011', 4),
+('2026-09-09', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-012', NULL, '+34600000012', 2),
+('2026-10-25', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CONFIRMADA', 'LOC-013', 'Desea guía oficial en inglés', '+34600000013', 9),
+('2026-10-10', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'PENDIENTE', 'LOC-014', 'Interesado en sesión fotográfica', '+34600000014', 5),
+('2026-08-01', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-015', 'Cliente repetidor', '+34600000015', 6);
+
+INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES 
+('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 4, true, '2025-12-01', NULL),
+('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 5, true, '2025-12-01', NULL),
+('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 6, true, '2025-12-01', NULL),
+('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 7, true, '2025-12-01', NULL),
+('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 8, true, '2025-12-01', NULL),
+
+('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 9, false, '2025-12-01', '2026-03-15'),
+('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 10, false, '2025-12-01', '2026-04-20'),
+('Sven', 'Lund', NULL, '55555555T', '1998-12-05', 'Sueca', 1, 8, 'sven@mail.com', '+34600111229', 11, false, '2025-12-01', '2026-05-10'),
+
+('Yuki', 'Sato', NULL, '66666666Y', '2010-07-20', 'Japonesa', 1, 9, 'yuki_padres@mail.com', '+81900111230', 12, true, '2025-12-01', NULL),  -- Menor CON consentimiento
+('Mateo', 'Ricci', NULL, '77777777U', '2012-03-15', 'Italiana', 0, 10, 'mateo_tutor@mail.com', '+39600111231', 13, true, '2025-12-01', NULL), -- Menor SIN consentimiento
+('Paula', 'Ortiz', 'Girona', '88888888I', '2009-01-10', 'Española', 0, 11, 'paula_madre@mail.com', '+34600111232', 14, true, '2025-12-01', NULL), -- Menor SIN consentimiento
+('Adrián', 'Méndez', NULL, '99999999O', '2011-06-14', 'Española', 1, 12, 'adrian_padre@mail.com', '+34600111233', 15, true, '2025-12-01', NULL), -- Menor CON consentimiento
+
+('Daniel', 'Kuznetsov', NULL, '12312312P', '1990-10-10', 'Ucraniana', 1, 13, 'daniel@mail.com', '+380600111234', 16, true, '2025-12-01', NULL),
+('Leo', 'García', 'Sanz', '23423423A', '1992-05-05', 'Argentina', 1, 14, 'leo@mail.com', '+549110111235', 17, true, '2025-12-01', NULL),
+('Emma', 'Watson', NULL, '34534534S', '1994-08-19', 'Británica', 1, 15, 'emma@mail.com', '+44700111236', 18, true, '2025-12-01', NULL),
+('Hiroki', 'Tanaka', NULL, '45645645D', '1996-02-28', 'Japonesa', 1, null, 'hiroki@mail.com', '+81900111237', 19, true, '2025-12-01', NULL),
+('Sara', 'Müller', NULL, '56756756F', '1998-11-11', 'Alemana', 1, null, 'sara@mail.com', '+49150111238', 20, true, '2025-12-01', NULL),
+('Noah', 'Dubois', NULL, '67867867G', '1991-03-01', 'Francesa', 1, null, 'noah@mail.com', '+33600111239', 21, true, '2025-12-01', NULL),
+('Sofía', 'Pereira', NULL, '78978978H', '1993-12-25', 'Portuguesa', 1, null, 'sofia@mail.com', '+351900111240', 22, true, '2025-12-01', NULL),
+('Liam', 'O Connor', NULL, '89089089J', '1962-07-07', 'Irlandesa', 1, null, 'liam@mail.com', '+353800111241', 23, true, '2025-12-01', NULL),
+('Fatima', 'Zahra', NULL, '90190190K', '1995-02-14', 'Marroquí', 1, null, 'fatima@mail.com', '+212600111242', 24, true, '2025-12-01', NULL),
+('Andrés', 'Bello', 'Paz', '01201201L', '1989-10-31', 'Chilena', 1, null, 'andres@mail.com', '+56900111243', 25, true, '2025-12-01', NULL),
+
+('Clara', 'Zetkin', NULL, '12341234M', '1950-06-20', 'Alemana', 1, null, 'clara@mail.com', '+49150111244', 26, false, '2025-12-01', '2026-01-10'),
+('Biel', 'Vila', 'Junyent', '54325432N', '1997-09-09', 'Española', 1, null, 'biel@mail.com', '+34600111245', 27, true, '2025-12-01', NULL),
+('Dimitri', 'Sokolov', NULL, '98769876B', '1980-05-20', 'Ucraniana', 1, null, 'dimitri@mail.com', '+380600111246', 28, false, '2025-12-01', '2026-02-28'),
+('Valentina', 'Gómez', NULL, '65436543V', '1999-04-04', 'Mexicana', 1, null, 'valentina@mail.com', '+52550111247', 29, true, '2025-12-01', NULL),
+('Oliver', 'Smith', NULL, '11112222Z', '1991-01-01', 'Británica', 1, null, 'oliver@mail.com', '+44700111248', 30, true, '2025-12-01', NULL),
+('Marta', 'Krawczyk', NULL, '33334444X', '1995-12-12', 'Polaca', 1, null, 'marta@mail.com', '+48500111249', 31, true, '2025-12-01', NULL),
+('Lucas', 'Moreno', 'Díaz', '44445555C', '2015-11-10', 'Española', 0, null, 'lucas_padres@mail.com', '+34600111250', 32, true, '2025-12-01', NULL), -- Menor muy joven sin consentimiento
+('Chloe', 'Bourgeois', NULL, '55556666V', '1997-08-22', 'Francesa', 1, null, 'chloe@mail.com', '+33600111251', 33, false, '2025-12-01', '2026-06-01'); [42001-240]
+2026-06-09 20:13:32.865874+02:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES ('Director', 'Sistema', NULL, '00000000A', '1970-01-01', 'Desconocida', 1, NULL, 'admin@sbu.gov', '000000000', 1, true, '2025-01-01', NULL), ('José', 'Álvarez', NULL, '11111111S', '1980-01-01', 'Española', 1, NULL, 'jose@sbu.gov', '600000001', 2, true, '2025-01-01', NULL), ('Mario', 'Pérez', NULL, '22222222E', '1995-05-05', 'Española', 1, NULL, 'mario@sbu.gov', '600000002', 3, true, '2025-01-01', NULL), ('Jesús', 'Hidalgo', 'Rodríguez', '33333333C', '1988-01-01', 'Española', 1, NULL, 'jesusjacky88@gmail.com', '600000003', 4, true, '2025-01-01', NULL), ('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 5, true, '2025-12-01', NULL), ('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 6, true, '2025-12-01', NULL), ('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 7, true, '2025-12-01', NULL), ('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 8, true, '2025-12-01', NULL), ('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 9, true, '2025-12-01', NULL), ('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 10, false, '2025-12-01', '2026-03-15'), ('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 11, false, '2025-12-01', '2026-04-20'), ('Sven', 'Lund', NULL, '55555555T', '1\000a\000aINSERT INTO reserva (fecha_viaje, email_contacto, precio_total, confirmacion_mayor_edad, estado, localizador_cliente, observaciones, telefono, tipo_paquete_id) VALUES\000a('2026-07-10', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-001', 'Madrugador', '+34600000001', 1),\000a('2026-08-05', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-002', 'Sin observaciones', '+34600000002', 2),\000a('2026-09-12', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CANCELADA', 'LOC-003', 'Cancelado por clima', '+34600000003', 1),\000a('2026-07-20', 'proyecto.chernobyl.explorer@gmail.com', 22000.0, 1, 'CONFIRMADA', 'LOC-004', 'Cliente solicita revisión ERA', '+34600000004', 7),\000a('2026-12-25', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'PENDIENTE', 'LOC-005', 'Reserva navideña', '+34600000005', 4),\000a('2026-08-15', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'CONFIRMADA', 'LOC-006', NULL, '+34600000006', 5),\000a('2026-07-01', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CANCELADA', 'LOC-007', 'Permisos de Estado denegados por SBU', '+34600000007', 9),\000a('2026-07-25', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-008', 'Documentalistas', '+34600000008', 6),\000a('2026-08-30', 'proyecto.chernobyl.explorer@gmail.com', 11500.0, 1, 'PENDIENTE', 'LOC-009', 'Pendiente de validar DNI', '+34600000009', 3),\000a('2026-09-05', 'proyecto.chernobyl.explorer@gmail.com', 38000.0, 1, 'CONFIRMADA', 'LOC-010', 'Requiere dosimetría avanzada', '+34600000010', 8),\000a('2026-11-11', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'CANCELADA', 'LOC-011', 'Causa mayor militar', '+34600000011', 4),\000a('2026-09-09', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-012', NULL, '+34600000012', 2),\000a('2026-10-25', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CONFIRMADA', 'LOC-013', 'Desea guía oficial en inglés', '+34600000013', 9),\000a('2026-10-10', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'PENDIENTE', 'LOC-014', 'Interesado en sesión fotográfica', '+34600000014', 5),\000a('2026-08-01', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-015', 'Cliente repetidor', '+34600000015', 6);\000a\000aINSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES \000a('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 4, true, '2025-12-01', NULL),\000a('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 5, true, '2025-12-01', NULL),\000a('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 6, true, '2025-12-01', NULL),\000a('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 7, true, '2025-12-01', NULL),\000a('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 8, true, '2025-12-01', NULL),\000a\000a('Igor', 'Volkov', NULL, '[*]33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 9, false, '2025-12-01', '2026-03-15'),\000a('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 10, false, '2025-12-01', '2026-04-20'),\000a('Sven', 'Lund', NULL, '55555555T', '1998-12-05', 'Sueca', 1, 8, 'sven@mail.com', '+34600111229', 11, false, '2025-12-01', '2026-05-10'),\000a\000a('Yuki', 'Sato', NULL, '66666666Y', '2010-07-20', 'Japonesa', 1, 9, 'yuki_padres@mail.com', '+81900111230', 12, true, '2025-12-01', NULL),  -- Menor CON consentimiento\000a('Mateo', 'Ricci', NULL, '77777777U', '2012-03-15', 'Italiana', 0, 10, 'mateo_tutor@mail.com', '+39600111231', 13, true, '2025-12-01', NULL), -- Menor SIN consentimiento\000a('Paula', 'Ortiz', 'Girona', '88888888I', '2009-01-10', 'Española', 0, 11, 'paula_madre@mail.com', '+34600111232', 14, true, '2025-12-01', NULL), -- Menor SIN consentimiento\000a('Adrián', 'Méndez', NULL, '99999999O', '2011-06-14', 'Española', 1, 12, 'adrian_padre@mail.com', '+34600111233', 15, true, '2025-12-01', NULL), -- Menor CON consentimiento\000a\000a('Daniel', 'Kuznetsov', NULL, '12312312P', '1990-10-10', 'Ucraniana', 1, 13, 'daniel@mail.com', '+380600111234', 16, true, '2025-12-01', NULL),\000a('Leo', 'García', 'Sanz', '23423423A', '1992-05-05', 'Argentina', 1, 14, 'leo@mail.com', '+549110111235', 17, true, '2025-12-01', NULL),\000a('Emma', 'Watson', NULL, '34534534S', '1994-08-19', 'Británica', 1, 15, 'emma@mail.com', '+44700111236', 18, true, '2025-12-01', NULL),\000a('Hiroki', 'Tanaka', NULL, '45645645D', '1996-02-28', 'Japonesa', 1, null, 'hiroki@mail.com', '+81900111237', 19, true, '2025-12-01', NULL),\000a('Sara', 'Müller', NULL, '56756756F', '1998-11-11', 'Alemana', 1, null, 'sara@mail.com', '+49150111238', 20, true, '2025-12-01', NULL),\000a('Noah', 'Dubois', NULL, '67867867G', '1991-03-01', 'Francesa', 1, null, 'noah@mail.com', '+33600111239', 21, true, '2025-12-01', NULL),\000a('Sofía', 'Pereira', NULL, '78978978H', '1993-12-25', 'Portuguesa', 1, null, 'sofia@mail.com', '+351900111240', 22, true, '2025-12-01', NULL),\000a('Liam', 'O Connor', NULL, '89089089J', '1962-07-07', 'Irlandesa', 1, null, 'liam@mail.com', '+353800111241', 23, true, '2025-12-01', NULL),\000a('Fatima', 'Zahra', NULL, '90190190K', '1995-02-14', 'Marroquí', 1, null, 'fatima@mail.com', '+212600111242', 24, true, '2025-12-01', NULL),\000a('Andrés', 'Bello', 'Paz', '01201201L', '1989-10-31', 'Chilena', 1, null, 'andres@mail.com', '+56900111243', 25, true, '2025-12-01', NULL),\000a\000a('Clara', 'Zetkin', NULL, '12341234M', '1950-06-20', 'Alemana', 1, null, 'clara@mail.com', '+49150111244', 26, false, '2025-12-01', '2026-01-10'),\000a('Biel', 'Vila', 'Junyent', '54325432N', '1997-09-09', 'Española', 1, null, 'biel@mail.com', '+34600111245', 27, true, '2025-12-01', NULL),\000a('Dimitri', 'Sokolov', NULL, '98769876B', '1980-05-20', 'Ucraniana', 1, null, 'dimitri@mail.com', '+380600111246', 28, false, '2025-12-01', '2026-02-28'),\000a('Valentina', 'Gómez', NULL, '65436543V', '1999-04-04', 'Mexicana', 1, null, 'valentina@mail.com', '+52550111247', 29, true, '2025-12-01', NULL),\000a('Oliver', 'Smith', NULL, '11112222Z', '1991-01-01', 'Británica', 1, null, 'oliver@mail.com', '+44700111248', 30, true, '2025-12-01', NULL),\000a('Marta', 'Krawczyk', NULL, '33334444X', '1995-12-12', 'Polaca', 1, null, 'marta@mail.com', '+48500111249', 31, true, '2025-12-01', NULL),\000a('Lucas', 'Moreno', 'Díaz', '44445555C', '2015-11-10', 'Española', 0, null, 'lucas_padres@mail.com', '+34600111250', 32, true, '2025-12-01', NULL), -- Menor muy joven sin consentimiento\000a('Chloe', 'Bourgeois', NULL, '55556666V', '1997-08-22', 'Francesa', 1, null, 'chloe@mail.com', '+33600111251', 33, false, '2025-12-01', '2026-06-01');"; se esperaba "Approximate numeric"
+Syntax error in SQL statement "INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES ('Director', 'Sistema', NULL, '00000000A', '1970-01-01', 'Desconocida', 1, NULL, 'admin@sbu.gov', '000000000', 1, true, '2025-01-01', NULL), ('José', 'Álvarez', NULL, '11111111S', '1980-01-01', 'Española', 1, NULL, 'jose@sbu.gov', '600000001', 2, true, '2025-01-01', NULL), ('Mario', 'Pérez', NULL, '22222222E', '1995-05-05', 'Española', 1, NULL, 'mario@sbu.gov', '600000002', 3, true, '2025-01-01', NULL), ('Jesús', 'Hidalgo', 'Rodríguez', '33333333C', '1988-01-01', 'Española', 1, NULL, 'jesusjacky88@gmail.com', '600000003', 4, true, '2025-01-01', NULL), ('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 5, true, '2025-12-01', NULL), ('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 6, true, '2025-12-01', NULL), ('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 7, true, '2025-12-01', NULL), ('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 8, true, '2025-12-01', NULL), ('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 9, true, '2025-12-01', NULL), ('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 10, false, '2025-12-01', '2026-03-15'), ('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 11, false, '2025-12-01', '2026-04-20'), ('Sven', 'Lund', NULL, '55555555T', '1\000a\000aINSERT INTO reserva (fecha_viaje, email_contacto, precio_total, confirmacion_mayor_edad, estado, localizador_cliente, observaciones, telefono, tipo_paquete_id) VALUES\000a('2026-07-10', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-001', 'Madrugador', '+34600000001', 1),\000a('2026-08-05', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-002', 'Sin observaciones', '+34600000002', 2),\000a('2026-09-12', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CANCELADA', 'LOC-003', 'Cancelado por clima', '+34600000003', 1),\000a('2026-07-20', 'proyecto.chernobyl.explorer@gmail.com', 22000.0, 1, 'CONFIRMADA', 'LOC-004', 'Cliente solicita revisión ERA', '+34600000004', 7),\000a('2026-12-25', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'PENDIENTE', 'LOC-005', 'Reserva navideña', '+34600000005', 4),\000a('2026-08-15', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'CONFIRMADA', 'LOC-006', NULL, '+34600000006', 5),\000a('2026-07-01', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CANCELADA', 'LOC-007', 'Permisos de Estado denegados por SBU', '+34600000007', 9),\000a('2026-07-25', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-008', 'Documentalistas', '+34600000008', 6),\000a('2026-08-30', 'proyecto.chernobyl.explorer@gmail.com', 11500.0, 1, 'PENDIENTE', 'LOC-009', 'Pendiente de validar DNI', '+34600000009', 3),\000a('2026-09-05', 'proyecto.chernobyl.explorer@gmail.com', 38000.0, 1, 'CONFIRMADA', 'LOC-010', 'Requiere dosimetría avanzada', '+34600000010', 8),\000a('2026-11-11', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'CANCELADA', 'LOC-011', 'Causa mayor militar', '+34600000011', 4),\000a('2026-09-09', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-012', NULL, '+34600000012', 2),\000a('2026-10-25', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CONFIRMADA', 'LOC-013', 'Desea guía oficial en inglés', '+34600000013', 9),\000a('2026-10-10', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'PENDIENTE', 'LOC-014', 'Interesado en sesión fotográfica', '+34600000014', 5),\000a('2026-08-01', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-015', 'Cliente repetidor', '+34600000015', 6);\000a\000aINSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES \000a('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 4, true, '2025-12-01', NULL),\000a('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 5, true, '2025-12-01', NULL),\000a('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 6, true, '2025-12-01', NULL),\000a('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 7, true, '2025-12-01', NULL),\000a('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 8, true, '2025-12-01', NULL),\000a\000a('Igor', 'Volkov', NULL, '[*]33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 9, false, '2025-12-01', '2026-03-15'),\000a('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 10, false, '2025-12-01', '2026-04-20'),\000a('Sven', 'Lund', NULL, '55555555T', '1998-12-05', 'Sueca', 1, 8, 'sven@mail.com', '+34600111229', 11, false, '2025-12-01', '2026-05-10'),\000a\000a('Yuki', 'Sato', NULL, '66666666Y', '2010-07-20', 'Japonesa', 1, 9, 'yuki_padres@mail.com', '+81900111230', 12, true, '2025-12-01', NULL),  -- Menor CON consentimiento\000a('Mateo', 'Ricci', NULL, '77777777U', '2012-03-15', 'Italiana', 0, 10, 'mateo_tutor@mail.com', '+39600111231', 13, true, '2025-12-01', NULL), -- Menor SIN consentimiento\000a('Paula', 'Ortiz', 'Girona', '88888888I', '2009-01-10', 'Española', 0, 11, 'paula_madre@mail.com', '+34600111232', 14, true, '2025-12-01', NULL), -- Menor SIN consentimiento\000a('Adrián', 'Méndez', NULL, '99999999O', '2011-06-14', 'Española', 1, 12, 'adrian_padre@mail.com', '+34600111233', 15, true, '2025-12-01', NULL), -- Menor CON consentimiento\000a\000a('Daniel', 'Kuznetsov', NULL, '12312312P', '1990-10-10', 'Ucraniana', 1, 13, 'daniel@mail.com', '+380600111234', 16, true, '2025-12-01', NULL),\000a('Leo', 'García', 'Sanz', '23423423A', '1992-05-05', 'Argentina', 1, 14, 'leo@mail.com', '+549110111235', 17, true, '2025-12-01', NULL),\000a('Emma', 'Watson', NULL, '34534534S', '1994-08-19', 'Británica', 1, 15, 'emma@mail.com', '+44700111236', 18, true, '2025-12-01', NULL),\000a('Hiroki', 'Tanaka', NULL, '45645645D', '1996-02-28', 'Japonesa', 1, null, 'hiroki@mail.com', '+81900111237', 19, true, '2025-12-01', NULL),\000a('Sara', 'Müller', NULL, '56756756F', '1998-11-11', 'Alemana', 1, null, 'sara@mail.com', '+49150111238', 20, true, '2025-12-01', NULL),\000a('Noah', 'Dubois', NULL, '67867867G', '1991-03-01', 'Francesa', 1, null, 'noah@mail.com', '+33600111239', 21, true, '2025-12-01', NULL),\000a('Sofía', 'Pereira', NULL, '78978978H', '1993-12-25', 'Portuguesa', 1, null, 'sofia@mail.com', '+351900111240', 22, true, '2025-12-01', NULL),\000a('Liam', 'O Connor', NULL, '89089089J', '1962-07-07', 'Irlandesa', 1, null, 'liam@mail.com', '+353800111241', 23, true, '2025-12-01', NULL),\000a('Fatima', 'Zahra', NULL, '90190190K', '1995-02-14', 'Marroquí', 1, null, 'fatima@mail.com', '+212600111242', 24, true, '2025-12-01', NULL),\000a('Andrés', 'Bello', 'Paz', '01201201L', '1989-10-31', 'Chilena', 1, null, 'andres@mail.com', '+56900111243', 25, true, '2025-12-01', NULL),\000a\000a('Clara', 'Zetkin', NULL, '12341234M', '1950-06-20', 'Alemana', 1, null, 'clara@mail.com', '+49150111244', 26, false, '2025-12-01', '2026-01-10'),\000a('Biel', 'Vila', 'Junyent', '54325432N', '1997-09-09', 'Española', 1, null, 'biel@mail.com', '+34600111245', 27, true, '2025-12-01', NULL),\000a('Dimitri', 'Sokolov', NULL, '98769876B', '1980-05-20', 'Ucraniana', 1, null, 'dimitri@mail.com', '+380600111246', 28, false, '2025-12-01', '2026-02-28'),\000a('Valentina', 'Gómez', NULL, '65436543V', '1999-04-04', 'Mexicana', 1, null, 'valentina@mail.com', '+52550111247', 29, true, '2025-12-01', NULL),\000a('Oliver', 'Smith', NULL, '11112222Z', '1991-01-01', 'Británica', 1, null, 'oliver@mail.com', '+44700111248', 30, true, '2025-12-01', NULL),\000a('Marta', 'Krawczyk', NULL, '33334444X', '1995-12-12', 'Polaca', 1, null, 'marta@mail.com', '+48500111249', 31, true, '2025-12-01', NULL),\000a('Lucas', 'Moreno', 'Díaz', '44445555C', '2015-11-10', 'Española', 0, null, 'lucas_padres@mail.com', '+34600111250', 32, true, '2025-12-01', NULL), -- Menor muy joven sin consentimiento\000a('Chloe', 'Bourgeois', NULL, '55556666V', '1997-08-22', 'Francesa', 1, null, 'chloe@mail.com', '+33600111251', 33, false, '2025-12-01', '2026-06-01');"; expected "Approximate numeric"; SQL statement:
+INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES ('Director', 'Sistema', NULL, '00000000A', '1970-01-01', 'Desconocida', 1, NULL, 'admin@sbu.gov', '000000000', 1, true, '2025-01-01', NULL), ('José', 'Álvarez', NULL, '11111111S', '1980-01-01', 'Española', 1, NULL, 'jose@sbu.gov', '600000001', 2, true, '2025-01-01', NULL), ('Mario', 'Pérez', NULL, '22222222E', '1995-05-05', 'Española', 1, NULL, 'mario@sbu.gov', '600000002', 3, true, '2025-01-01', NULL), ('Jesús', 'Hidalgo', 'Rodríguez', '33333333C', '1988-01-01', 'Española', 1, NULL, 'jesusjacky88@gmail.com', '600000003', 4, true, '2025-01-01', NULL), ('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 5, true, '2025-12-01', NULL), ('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 6, true, '2025-12-01', NULL), ('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 7, true, '2025-12-01', NULL), ('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 8, true, '2025-12-01', NULL), ('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 9, true, '2025-12-01', NULL), ('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 10, false, '2025-12-01', '2026-03-15'), ('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 11, false, '2025-12-01', '2026-04-20'), ('Sven', 'Lund', NULL, '55555555T', '1
+
+INSERT INTO reserva (fecha_viaje, email_contacto, precio_total, confirmacion_mayor_edad, estado, localizador_cliente, observaciones, telefono, tipo_paquete_id) VALUES
+('2026-07-10', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-001', 'Madrugador', '+34600000001', 1),
+('2026-08-05', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-002', 'Sin observaciones', '+34600000002', 2),
+('2026-09-12', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CANCELADA', 'LOC-003', 'Cancelado por clima', '+34600000003', 1),
+('2026-07-20', 'proyecto.chernobyl.explorer@gmail.com', 22000.0, 1, 'CONFIRMADA', 'LOC-004', 'Cliente solicita revisión ERA', '+34600000004', 7),
+('2026-12-25', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'PENDIENTE', 'LOC-005', 'Reserva navideña', '+34600000005', 4),
+('2026-08-15', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'CONFIRMADA', 'LOC-006', NULL, '+34600000006', 5),
+('2026-07-01', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CANCELADA', 'LOC-007', 'Permisos de Estado denegados por SBU', '+34600000007', 9),
+('2026-07-25', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-008', 'Documentalistas', '+34600000008', 6),
+('2026-08-30', 'proyecto.chernobyl.explorer@gmail.com', 11500.0, 1, 'PENDIENTE', 'LOC-009', 'Pendiente de validar DNI', '+34600000009', 3),
+('2026-09-05', 'proyecto.chernobyl.explorer@gmail.com', 38000.0, 1, 'CONFIRMADA', 'LOC-010', 'Requiere dosimetría avanzada', '+34600000010', 8),
+('2026-11-11', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'CANCELADA', 'LOC-011', 'Causa mayor militar', '+34600000011', 4),
+('2026-09-09', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-012', NULL, '+34600000012', 2),
+('2026-10-25', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CONFIRMADA', 'LOC-013', 'Desea guía oficial en inglés', '+34600000013', 9),
+('2026-10-10', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'PENDIENTE', 'LOC-014', 'Interesado en sesión fotográfica', '+34600000014', 5),
+('2026-08-01', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-015', 'Cliente repetidor', '+34600000015', 6);
+
+INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES 
+('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 4, true, '2025-12-01', NULL),
+('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 2, 'elena@mail.com', '+34600111223', 5, true, '2025-12-01', NULL),
+('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 3, 'alex@mail.com', '+34600111224', 6, true, '2025-12-01', NULL),
+('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 4, 'antonio@mail.com', '+34600111225', 7, true, '2025-12-01', NULL),
+('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 5, 'beatriz@mail.com', '+34600111226', 8, true, '2025-12-01', NULL),
+
+('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 6, 'igor@mail.com', '+34600111227', 9, false, '2025-12-01', '2026-03-15'),
+('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 7, 'carmen@mail.com', '+34600111228', 10, false, '2025-12-01', '2026-04-20'),
+('Sven', 'Lund', NULL, '55555555T', '1998-12-05', 'Sueca', 1, 8, 'sven@mail.com', '+34600111229', 11, false, '2025-12-01', '2026-05-10'),
+
+('Yuki', 'Sato', NULL, '66666666Y', '2010-07-20', 'Japonesa', 1, 9, 'yuki_padres@mail.com', '+81900111230', 12, true, '2025-12-01', NULL),  -- Menor CON consentimiento
+('Mateo', 'Ricci', NULL, '77777777U', '2012-03-15', 'Italiana', 0, 10, 'mateo_tutor@mail.com', '+39600111231', 13, true, '2025-12-01', NULL), -- Menor SIN consentimiento
+('Paula', 'Ortiz', 'Girona', '88888888I', '2009-01-10', 'Española', 0, 11, 'paula_madre@mail.com', '+34600111232', 14, true, '2025-12-01', NULL), -- Menor SIN consentimiento
+('Adrián', 'Méndez', NULL, '99999999O', '2011-06-14', 'Española', 1, 12, 'adrian_padre@mail.com', '+34600111233', 15, true, '2025-12-01', NULL), -- Menor CON consentimiento
+
+('Daniel', 'Kuznetsov', NULL, '12312312P', '1990-10-10', 'Ucraniana', 1, 13, 'daniel@mail.com', '+380600111234', 16, true, '2025-12-01', NULL),
+('Leo', 'García', 'Sanz', '23423423A', '1992-05-05', 'Argentina', 1, 14, 'leo@mail.com', '+549110111235', 17, true, '2025-12-01', NULL),
+('Emma', 'Watson', NULL, '34534534S', '1994-08-19', 'Británica', 1, 15, 'emma@mail.com', '+44700111236', 18, true, '2025-12-01', NULL),
+('Hiroki', 'Tanaka', NULL, '45645645D', '1996-02-28', 'Japonesa', 1, null, 'hiroki@mail.com', '+81900111237', 19, true, '2025-12-01', NULL),
+('Sara', 'Müller', NULL, '56756756F', '1998-11-11', 'Alemana', 1, null, 'sara@mail.com', '+49150111238', 20, true, '2025-12-01', NULL),
+('Noah', 'Dubois', NULL, '67867867G', '1991-03-01', 'Francesa', 1, null, 'noah@mail.com', '+33600111239', 21, true, '2025-12-01', NULL),
+('Sofía', 'Pereira', NULL, '78978978H', '1993-12-25', 'Portuguesa', 1, null, 'sofia@mail.com', '+351900111240', 22, true, '2025-12-01', NULL),
+('Liam', 'O Connor', NULL, '89089089J', '1962-07-07', 'Irlandesa', 1, null, 'liam@mail.com', '+353800111241', 23, true, '2025-12-01', NULL),
+('Fatima', 'Zahra', NULL, '90190190K', '1995-02-14', 'Marroquí', 1, null, 'fatima@mail.com', '+212600111242', 24, true, '2025-12-01', NULL),
+('Andrés', 'Bello', 'Paz', '01201201L', '1989-10-31', 'Chilena', 1, null, 'andres@mail.com', '+56900111243', 25, true, '2025-12-01', NULL),
+
+('Clara', 'Zetkin', NULL, '12341234M', '1950-06-20', 'Alemana', 1, null, 'clara@mail.com', '+49150111244', 26, false, '2025-12-01', '2026-01-10'),
+('Biel', 'Vila', 'Junyent', '54325432N', '1997-09-09', 'Española', 1, null, 'biel@mail.com', '+34600111245', 27, true, '2025-12-01', NULL),
+('Dimitri', 'Sokolov', NULL, '98769876B', '1980-05-20', 'Ucraniana', 1, null, 'dimitri@mail.com', '+380600111246', 28, false, '2025-12-01', '2026-02-28'),
+('Valentina', 'Gómez', NULL, '65436543V', '1999-04-04', 'Mexicana', 1, null, 'valentina@mail.com', '+52550111247', 29, true, '2025-12-01', NULL),
+('Oliver', 'Smith', NULL, '11112222Z', '1991-01-01', 'Británica', 1, null, 'oliver@mail.com', '+44700111248', 30, true, '2025-12-01', NULL),
+('Marta', 'Krawczyk', NULL, '33334444X', '1995-12-12', 'Polaca', 1, null, 'marta@mail.com', '+48500111249', 31, true, '2025-12-01', NULL),
+('Lucas', 'Moreno', 'Díaz', '44445555C', '2015-11-10', 'Española', 0, null, 'lucas_padres@mail.com', '+34600111250', 32, true, '2025-12-01', NULL), -- Menor muy joven sin consentimiento
+('Chloe', 'Bourgeois', NULL, '55556666V', '1997-08-22', 'Francesa', 1, null, 'chloe@mail.com', '+33600111251', 33, false, '2025-12-01', '2026-06-01'); [42001-240]
+2026-06-09 22:08:25 database: flush
+org.h2.message.DbException: Error General : "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]"
+General error: "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]" [50000-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:441)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:404)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:112)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:86)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:213)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:131)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.openConnection(GenericDataSource.java:158)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.openConnection(H2DataSource.java:72)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:110)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.lambda$initializeMainContext$0(JDBCRemoteInstance.java:105)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryOpenContext(DBExecUtils.java:1118)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:104)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.<init>(JDBCRemoteInstance.java:59)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.initializeRemoteInstance(JDBCDataSource.java:123)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.<init>(GenericDataSource.java:124)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.<init>(H2DataSource.java:41)
+	at org.jkiss.dbeaver.ext.h2.model.H2MetaModel.createDataSourceImpl(H2MetaModel.java:58)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:59)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:35)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1374)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1232)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:1059)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:79)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectionTestJob.run(ConnectionTestJob.java:104)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]"
+General error: "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 46 more
+Caused by: java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:705)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:401)
+	... 40 more
+2026-06-09 22:08:25 database: opening C:/Users/Jesus/Desktop/ChernobylExclusionExplorer/data/cherno
+org.h2.message.DbException: Archivo corrupto mientras se leía el registro: null. Solución Posible: use la herramienta de recuperación (recovery tool)
+File corrupted while reading record: null. Possible solution: use the recovery tool [90030-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:205)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:112)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:86)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:213)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:131)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.openConnection(GenericDataSource.java:158)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.openConnection(H2DataSource.java:72)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:110)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.lambda$initializeMainContext$0(JDBCRemoteInstance.java:105)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryOpenContext(DBExecUtils.java:1118)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:104)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.<init>(JDBCRemoteInstance.java:59)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.initializeRemoteInstance(JDBCDataSource.java:123)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.<init>(GenericDataSource.java:124)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.<init>(H2DataSource.java:41)
+	at org.jkiss.dbeaver.ext.h2.model.H2MetaModel.createDataSourceImpl(H2MetaModel.java:58)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:59)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:35)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1374)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1232)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:1059)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:79)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectionTestJob.run(ConnectionTestJob.java:104)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Archivo corrupto mientras se leía el registro: null. Solución Posible: use la herramienta de recuperación (recovery tool)
+File corrupted while reading record: null. Possible solution: use the recovery tool [90030-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 41 more
+Caused by: java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:705)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:401)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	... 38 more
+2026-06-09 22:08:36 database: flush
+org.h2.message.DbException: Error General : "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]"
+General error: "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]" [50000-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:441)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:404)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:112)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:86)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:213)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:131)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.openConnection(GenericDataSource.java:158)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.openConnection(H2DataSource.java:72)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:110)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.lambda$initializeMainContext$0(JDBCRemoteInstance.java:105)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryOpenContext(DBExecUtils.java:1118)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:104)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.<init>(JDBCRemoteInstance.java:59)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.initializeRemoteInstance(JDBCDataSource.java:123)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.<init>(GenericDataSource.java:124)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.<init>(H2DataSource.java:41)
+	at org.jkiss.dbeaver.ext.h2.model.H2MetaModel.createDataSourceImpl(H2MetaModel.java:58)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:59)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:35)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1374)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1232)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:1059)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:79)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.runSync(ConnectJob.java:106)
+	at org.jkiss.dbeaver.ui.actions.datasource.DataSourceHandler.connectToDataSource(DataSourceHandler.java:123)
+	at org.jkiss.dbeaver.ui.actions.datasource.UIServiceConnectionsImpl.initConnection(UIServiceConnectionsImpl.java:122)
+	at org.jkiss.dbeaver.model.DBUtils.initDataSource(DBUtils.java:2674)
+	at org.jkiss.dbeaver.model.navigator.DBNDataSource.initializeNode(DBNDataSource.java:167)
+	at org.jkiss.dbeaver.model.navigator.DBNDatabaseNode.getChildren(DBNDatabaseNode.java:226)
+	at org.jkiss.dbeaver.model.navigator.DBNDatabaseNode.getChildren(DBNDatabaseNode.java:55)
+	at org.jkiss.dbeaver.model.navigator.DBNUtils.getNodeChildrenFiltered(DBNUtils.java:106)
+	at org.jkiss.dbeaver.ui.navigator.database.load.TreeLoadService.evaluate(TreeLoadService.java:50)
+	at org.jkiss.dbeaver.ui.navigator.database.load.TreeLoadService.evaluate(TreeLoadService.java:31)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:99)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]"
+General error: "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 56 more
+Caused by: java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:705)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:401)
+	... 50 more
+2026-06-09 22:08:36 database: opening C:/Users/Jesus/Desktop/ChernobylExclusionExplorer/data/cherno
+org.h2.message.DbException: Archivo corrupto mientras se leía el registro: null. Solución Posible: use la herramienta de recuperación (recovery tool)
+File corrupted while reading record: null. Possible solution: use the recovery tool [90030-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:205)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:112)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:86)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:213)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:131)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.openConnection(GenericDataSource.java:158)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.openConnection(H2DataSource.java:72)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:110)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.lambda$initializeMainContext$0(JDBCRemoteInstance.java:105)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryOpenContext(DBExecUtils.java:1118)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:104)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.<init>(JDBCRemoteInstance.java:59)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.initializeRemoteInstance(JDBCDataSource.java:123)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.<init>(GenericDataSource.java:124)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.<init>(H2DataSource.java:41)
+	at org.jkiss.dbeaver.ext.h2.model.H2MetaModel.createDataSourceImpl(H2MetaModel.java:58)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:59)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:35)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1374)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1232)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:1059)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:79)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.runSync(ConnectJob.java:106)
+	at org.jkiss.dbeaver.ui.actions.datasource.DataSourceHandler.connectToDataSource(DataSourceHandler.java:123)
+	at org.jkiss.dbeaver.ui.actions.datasource.UIServiceConnectionsImpl.initConnection(UIServiceConnectionsImpl.java:122)
+	at org.jkiss.dbeaver.model.DBUtils.initDataSource(DBUtils.java:2674)
+	at org.jkiss.dbeaver.model.navigator.DBNDataSource.initializeNode(DBNDataSource.java:167)
+	at org.jkiss.dbeaver.model.navigator.DBNDatabaseNode.getChildren(DBNDatabaseNode.java:226)
+	at org.jkiss.dbeaver.model.navigator.DBNDatabaseNode.getChildren(DBNDatabaseNode.java:55)
+	at org.jkiss.dbeaver.model.navigator.DBNUtils.getNodeChildrenFiltered(DBNUtils.java:106)
+	at org.jkiss.dbeaver.ui.navigator.database.load.TreeLoadService.evaluate(TreeLoadService.java:50)
+	at org.jkiss.dbeaver.ui.navigator.database.load.TreeLoadService.evaluate(TreeLoadService.java:31)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:99)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Archivo corrupto mientras se leía el registro: null. Solución Posible: use la herramienta de recuperación (recovery tool)
+File corrupted while reading record: null. Possible solution: use the recovery tool [90030-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 51 more
+Caused by: java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:705)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:401)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	... 48 more
+2026-06-09 22:08:42 database: flush
+org.h2.message.DbException: Error General : "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]"
+General error: "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]" [50000-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:441)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:404)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:112)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:86)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:213)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:131)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.openConnection(GenericDataSource.java:158)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.openConnection(H2DataSource.java:72)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:110)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.lambda$initializeMainContext$0(JDBCRemoteInstance.java:105)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryOpenContext(DBExecUtils.java:1118)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:104)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.<init>(JDBCRemoteInstance.java:59)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.initializeRemoteInstance(JDBCDataSource.java:123)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.<init>(GenericDataSource.java:124)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.<init>(H2DataSource.java:41)
+	at org.jkiss.dbeaver.ext.h2.model.H2MetaModel.createDataSourceImpl(H2MetaModel.java:58)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:59)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:35)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1374)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1232)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:1059)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:79)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectionTestJob.run(ConnectionTestJob.java:104)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]"
+General error: "java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 46 more
+Caused by: java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:705)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:401)
+	... 40 more
+2026-06-09 22:08:42 database: opening C:/Users/Jesus/Desktop/ChernobylExclusionExplorer/data/cherno
+org.h2.message.DbException: Archivo corrupto mientras se leía el registro: null. Solución Posible: use la herramienta de recuperación (recovery tool)
+File corrupted while reading record: null. Possible solution: use the recovery tool [90030-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.mvstore.db.MVTableEngine$Store.convertIllegalStateException(MVTableEngine.java:205)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:173)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:112)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCConnectionOpener.run(JDBCConnectionOpener.java:86)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:213)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.openConnection(JDBCDataSource.java:131)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.openConnection(GenericDataSource.java:158)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.openConnection(H2DataSource.java:72)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCExecutionContext.connect(JDBCExecutionContext.java:110)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.lambda$initializeMainContext$0(JDBCRemoteInstance.java:105)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryOpenContext(DBExecUtils.java:1118)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.initializeMainContext(JDBCRemoteInstance.java:104)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCRemoteInstance.<init>(JDBCRemoteInstance.java:59)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCDataSource.initializeRemoteInstance(JDBCDataSource.java:123)
+	at org.jkiss.dbeaver.ext.generic.model.GenericDataSource.<init>(GenericDataSource.java:124)
+	at org.jkiss.dbeaver.ext.h2.model.H2DataSource.<init>(H2DataSource.java:41)
+	at org.jkiss.dbeaver.ext.h2.model.H2MetaModel.createDataSourceImpl(H2MetaModel.java:58)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:59)
+	at org.jkiss.dbeaver.ext.generic.GenericDataSourceProvider.openDataSource(GenericDataSourceProvider.java:35)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.openDataSource(DataSourceDescriptor.java:1374)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect0(DataSourceDescriptor.java:1232)
+	at org.jkiss.dbeaver.registry.DataSourceDescriptor.connect(DataSourceDescriptor.java:1059)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectJob.run(ConnectJob.java:79)
+	at org.jkiss.dbeaver.runtime.jobs.ConnectionTestJob.run(ConnectionTestJob.java:104)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:110)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Archivo corrupto mientras se leía el registro: null. Solución Posible: use la herramienta de recuperación (recovery tool)
+File corrupted while reading record: null. Possible solution: use the recovery tool [90030-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:617)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 41 more
+Caused by: java.lang.IllegalStateException: The write format 3 is larger than the supported format 1, and the file was not opened in read-only mode [1.4.199/5]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.MVStore.readStoreHeader(MVStore.java:705)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:401)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	... 38 more

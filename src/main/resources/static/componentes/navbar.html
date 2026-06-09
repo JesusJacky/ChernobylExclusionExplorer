@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+	<div class="container">
+		<!-- Aquí faltaba la barra -->
+		<a class="navbar-brand mono fw-bold text-white" href="/index.html">☢ CE Explorer</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ms-auto align-items-center small text-uppercase fw-semibold">
+				<li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link" href="/paquetes.html">Expediciones</a></li>
+				<li class="nav-item"><a class="nav-link" href="/protocolos.html">Protocolos</a></li>
+				<li class="nav-item"><a class="nav-link" href="/historia.html">Archivo Histórico</a></li>
+				<li class="nav-item"><a class="nav-link" href="/reservas/mis-reservas.html">Reservas</a></li>
+				<li class="nav-item"><a class="nav-link" href="/perfil.html">Área Cliente</a></li>
+				<li class="nav-item ms-lg-4">
+					<!-- Y aquí también faltaba la barra -->
+					<a class="btn custom-btn-login mono" href="/login.html">
+						<i class="fas fa-sign-in-alt me-2"></i>Acceso / Registro
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<section class="status-bar bg-dark text-white py-2" style="border-top: 1px solid rgba(255,255,255,0.1);">
+	<div class="container text-center">
+		<small class="mono" style="color: var(--color-muted-rust);">
+			<i class="fa-solid fa-gauge-high"></i> ESTADO ZONA: ESTABLE | RAD: 0.12 μSv/h
+			<span class="mx-3">|</span>
+			<a href="https://weather.com/es-ES/tiempo/hoy/l/51.40,30.06" target="_blank" class="text-decoration-none"
+				style="color: var(--color-muted-rust); transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'"
+				onmouseout="this.style.opacity='1'">
+				<span id="monitor-tiempo">
+					<i class="fa-solid fa-satellite-dish fa-spin"></i> CARGANDO METEOROLOGÍA...
+				</span>
+			</a>
+		</small>
+	</div>
+</section>

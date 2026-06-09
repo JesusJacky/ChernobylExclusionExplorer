@@ -17,79 +17,56 @@ import org.springframework.web.bind.annotation.RestController;
 import com.chernobyl.explorer.entidades.PaqueteViaje;
 import com.chernobyl.explorer.servicio.PaqueteViajeService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/paquetes")
+@Tag(name = "Paquetes de Expedición", description = "Gestión de las diferentes rutas por la Zona de Exclusión")
 public class PaqueteController {
 
 	@Autowired
 	private PaqueteViajeService paqueteViajeService;
 
-	// http://localhost/paquetes
-	// TODO: Cambiar para usar ResponseEntity -> si la lista está vacía
-	// enviar un NO_CONTENT
+	@Operation(summary = "Catálogo de expediciones", description = "Lista todas las rutas disponibles con sus respectivos precios y niveles de radiación.")
 	@GetMapping
 	public List<PaqueteViaje> listarPaquetes() {
 		return paqueteViajeService.listarTodos();
 	}
 
+	@Operation(summary = "Obtener detalles de expedición", description = "Busca una ruta específica por su ID.")
 	@GetMapping("/{id}")
 	public ResponseEntity<PaqueteViaje> obtenerPorId(@PathVariable Integer id) {
-		try {
-			PaqueteViaje resultado = paqueteViajeService.buscarPorId(id);
-			return ResponseEntity.ok(resultado);
-		} catch (Exception e) {
-			System.err.println(e);
-			return ResponseEntity.notFound().build();
-		}
+		PaqueteViaje paquete = paqueteViajeService.buscarPorId(id);
+		return ResponseEntity.ok(paquete);
 	}
 
-	// GET de los paquetes que tengan un nivel de peligrosidad concreto,
-	// filtrado por el nombre (BAJO, MEDIO...)
-	// http://localhost/paquetes/BAJO
+	@Operation(summary = "Filtrar por peligrosidad", description = "Busca expediciones filtrando por nivel: BAJO, MEDIO o ALTO.")
 	@GetMapping("/nivel/{nivel}")
-	public ResponseEntity<List<PaqueteViaje>> obtenerPorNivel(@PathVariable String nivel){
-		try {
-			List<PaqueteViaje> paquetes = paqueteViajeService.listarPorNivel(nivel);
-			return ResponseEntity.ok(paquetes);
-		} catch (RuntimeException e) {
-			return ResponseEntity.notFound().build();
-		}
-	} 
-	
-
-	// POST para añadir nuevo paquete
-	@PostMapping
-	public ResponseEntity<PaqueteViaje> crear (@RequestBody PaqueteViaje paqueteViaje){
-		PaqueteViaje nuevoPaquete = paqueteViajeService.crear(paqueteViaje);
-		//System.out.println("BIEN");
-		return ResponseEntity.status(HttpStatus.CREATED).body(nuevoPaquete);
-		}
-	/*@PostMapping("{crear}")
-	public ResponseEntity<PaqueteViaje> crearConNivel (@RequestBody PaqueteViaje paqueteViaje){
-		PaqueteViaje nuevoPaquete = paqueteViajeService.crear(paqueteViaje);
-		return ResponseEntity.status(HttpStatus.CREATED).body(nuevoPaquete);
-		}*/
-
-	// PUT para actualizar
-	@PutMapping("/actualizar/{id}")
-	public ResponseEntity<PaqueteViaje> actualizar(@PathVariable Integer id, @RequestBody PaqueteViaje viaje) {
-		try {
-			PaqueteViaje paqueteActualizado = paqueteViajeService.actualizar(id, viaje);
-			return ResponseEntity.ok(paqueteActualizado);
-		} catch (RuntimeException e) {
-			return ResponseEntity.notFound().build();
-		}
+	public ResponseEntity<List<PaqueteViaje>> listarPorNivel(@PathVariable String nivel) {
+		List<PaqueteViaje> paquetes = paqueteViajeService.listarPorNivel(nivel);
+		return ResponseEntity.ok(paquetes);
 	}
 
-	// DELETE para borrrar un paquete concreto
+	@Operation(summary = "Crear nueva expedición", description = "Da de alta un nuevo paquete de viaje en el catálogo.")
+	@PostMapping
+	public ResponseEntity<PaqueteViaje> crear(@Valid @RequestBody PaqueteViaje paqueteViaje) {
+		PaqueteViaje nuevoPaquete = paqueteViajeService.crear(paqueteViaje);
+		return ResponseEntity.status(HttpStatus.CREATED).body(nuevoPaquete);
+	}
+
+	@Operation(summary = "Actualizar paquete", description = "Modifica los precios, descripción o lugares incluidos de una ruta existente.")
+	@PutMapping("/actualizar/{id}")
+	public ResponseEntity<PaqueteViaje> actualizar(@PathVariable Integer id, @Valid @RequestBody PaqueteViaje viaje) {
+		PaqueteViaje paqueteActualizado = paqueteViajeService.actualizar(id, viaje);
+		return ResponseEntity.ok(paqueteActualizado);
+	}
+
+	@Operation(summary = "Eliminar expedición", description = "Retira un paquete del catálogo.")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
-		try {
-			paqueteViajeService.eliminar(id);
-			return ResponseEntity.noContent().build();
-		} catch (RuntimeException e) {
-			return ResponseEntity.notFound().build();
-		}
+		paqueteViajeService.eliminar(id);
+		return ResponseEntity.noContent().build();
 	}
-
 }

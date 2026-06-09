@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Archivo Histórico - Chernobyl Exclusion Explorer</title>
+	<link href="css/style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syncopate:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap"
+		rel="stylesheet">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+	<!-- CONTENEDOR DEL MENÚ -->
+	<div id="navbar-container"></div>
+
+	<!-- CABECERA LIMPIA (Sin imagen de fondo para que no estorbe la lectura) -->
+	<header class="py-5 bg-dark text-white text-center">
+		<div class="container py-5">
+			<h1 class="display-4 mono fw-bold mb-3">La Noche del 26 de Abril</h1>
+			<p class="lead text-white-50 mx-auto" style="max-width: 800px;">
+				La crónica definitiva del mayor desastre nuclear de la historia. Secretos, heroísmo y el despertar del
+				átomo.
+			</p>
+		</div>
+	</header>
+
+	<!-- CONTENIDO HISTÓRICO COMPLETO, CIENTÍFICO Y EXTENDIDO -->
+	<section class="py-5 bg-light">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+
+					<!-- FOTO HERO MOVIDA AQUÍ: Justo antes del título principal -->
+					<figure class="mb-5 text-center">
+						<img src="img/hero_historia.jpg" class="img-fluid rounded shadow w-100"
+							style="max-height: 500px; object-fit: cover;"
+							alt="Vista general de la Central de Chernóbil">
+					</figure>
+
+					<!-- Introducción -->
+					<div class="mb-5 text-center">
+						<h2 class="mono fw-bold text-dark mb-3 text-uppercase">Chernóbil: Anatomía de una mentira y el
+							sacrificio del hombre</h2>
+						<p class="lead text-muted">Prípiat era la joya de la corona de la Unión Soviética, una
+							"Atomgrad" (ciudad atómica) nacida en 1970 para albergar a las mentes más brillantes de la
+							Central Nuclear V.I. Lenin. Pero bajo sus amplios bulevares y su propaganda de infalibilidad
+							socialista, se estaba gestando una catástrofe dictada por la arrogancia humana, los recortes
+							presupuestarios y el desprecio por las leyes de la física.</p>
+					</div>
+
+					<div class="card border-0 shadow-sm mb-5">
+						<div class="card-body p-4 p-md-5 text-justify">
+
+							<!-- 1. CÓMO FUNCIONA UN REACTOR Y EL FALLO DEL RBMK -->
+							<h4 class="mono text-dark mb-3 border-bottom pb-2">1. La trampa térmica: Física de un
+								reactor RBMK-1000</h4>
+							<p>Para comprender la tragedia, debemos descender al núcleo del problema. Una central
+								nuclear convencional funciona como una gigantesca máquina de vapor: los átomos de uranio
+								se dividen (fisión), liberan un calor extremo, hierven agua para crear vapor, y ese
+								vapor mueve turbinas que generan electricidad. Para que la fisión sea controlable, los
+								neutrones libres deben frenarse usando un "moderador" (como el agua en occidente). Si un
+								reactor occidental pierde agua, pierde su moderador y la reacción se apaga sola
+								(<strong>coeficiente de vacío negativo</strong>).</p>
+							<p>Pero la URSS quería producir la mayor cantidad de electricidad y plutonio armamentístico
+								al menor coste posible. Crearon el <strong>RBMK-1000</strong>. Este reactor usaba
+								enormes bloques de <strong>grafito como moderador</strong> y agua ordinaria solo como
+								refrigerante. Este diseño económico creó un defecto letal y clasificado por la KGB: el
+								<strong>coeficiente de vacío positivo</strong>. Si el agua del RBMK hervía o se perdía,
+								el grafito seguía moderando los neutrones. Sin el agua para absorber el exceso de
+								neutrones, el vapor ("vacío") provocaba que la reacción se acelerara salvajemente. A
+								baja potencia, el RBMK era inestable, impredecible y operarlo era caminar sobre el filo
+								de una navaja.
+							</p>
+							<p>El reactor estaba diseñado para operar con seguridad a una potencia térmica masiva de
+								<strong>3.200 megavatios (MWt)</strong>, entregando 1.000 megavatios eléctricos a la red
+								de Kiev. Nunca debía operarse por debajo de los 700 MWt, donde el monstruo se volvía
+								inestable.
+							</p>
+
+							<figure class="my-4 text-center">
+								<img src="img/pripyat_origen.jpg" class="img-fluid rounded shadow-sm w-100"
+									style="max-height: 450px; object-fit: cover;"
+									alt="La ciudad de Prípiat antes del desastre">
+								<figcaption class="text-muted small mt-2 fw-semibold"><i
+										class="fa-solid fa-camera me-1"></i> Prípiat floreciente. A escasos 3 kilómetros
+									del núcleo, sus 50.000 habitantes vivían ajenos a los defectos de diseño
+									clasificados de la central V.I. Lenin.</figcaption>
+							</figure>
+
+							<!-- 2. LA NOCHE DEL 26 DE ABRIL Y LA NEGLIGENCIA -->
+							<h4 class="mono text-dark mt-5 mb-3 border-bottom pb-2">2. El veneno químico: La noche del
+								26 de abril</h4>
+							<p>La catástrofe comenzó por una obsesión. La planta llevaba años intentando realizar una
+								prueba de seguridad vital: en caso de apagón total, los generadores diésel de emergencia
+								tardaban 60 segundos en arrancar. ¿Podría la turbina, al girar por simple inercia
+								mientras se frenaba, dar electricidad a las bombas de refrigeración durante ese minuto
+								crítico? La prueba, programada para el día 25, se retrasó por exigencias de Kiev. El
+								reactor quedó funcionando a media potencia durante 10 horas.</p>
+							<p>Esta decisión provocó un efecto químico devastador: el <strong>envenenamiento por
+									Xenón-135</strong>. El xenón es un subproducto de la fisión que "devora" neutrones.
+								A máxima potencia, el xenón se quema y desaparece. Pero a media potencia, comenzó a
+								acumularse como ceniza en un fuego, asfixiando el reactor.</p>
+							<p>En la madrugada del 26 de abril, el turno de noche, liderado por el operador de control
+								<strong>Leonid Toptunov</strong> (de 25 años) y el jefe de turno <strong>Aleksandr
+									Akimov</strong>, recibió la orden de bajar la potencia para la prueba. Debido al
+								xenón, la potencia se desplomó drásticamente hasta los 30 MWt, prácticamente apagado.
+								Según los manuales de seguridad, el reactor debía apagarse por completo durante 24 horas
+								para disipar el xenón. Sin embargo, el ingeniero jefe adjunto <strong>Anatoly
+									Dyatlov</strong>, un supervisor dictatorial, amenazó con despedirlos si no subían la
+								potencia y terminaban la prueba esa misma noche.
+							</p>
+							<p>Bajo coacción, los operarios violaron todos los protocolos de seguridad. Para combatir el
+								efecto asfixiante del xenón, extrajeron de forma manual casi todas las barras de control
+								(los frenos de boro del reactor). De las 211 barras disponibles, se requiere un mínimo
+								absoluto de 15 insertadas en todo momento; Akimov y Toptunov operaban con apenas 6. El
+								reactor quedó estabilizado a 200 MWt. Era una bomba de relojería sostenida solo por el
+								freno de un gas volátil (el xenón) y el flujo constante de agua.</p>
+
+							<!-- 3. LA EXPLOSIÓN -->
+							<h4 class="mono text-danger mt-5 mb-3 border-bottom pb-2">3. 01:23:40 AM: El botón de la
+								muerte (AZ-5)</h4>
+							<p>A las 01:23:04, la prueba dio comienzo. Se cerró el vapor a las turbinas, disminuyendo la
+								electricidad de las bombas. El caudal de agua bajó. En segundos, el agua residual en el
+								núcleo comenzó a hervir, creando burbujas de vapor.</p>
+							<p>El <strong>coeficiente de vacío positivo</strong> se desató con furia. Menos agua
+								significaba menos neutrones absorbidos, lo que aceleró la reacción, generando más calor,
+								lo que evaporó más agua. Un bucle infinito de retroalimentación térmica. Al ver que los
+								medidores de potencia se disparaban, Akimov gritó y pulsó el botón <strong>AZ-5
+									(Scram)</strong>, ordenando el apagado de emergencia total para reinsertar todas las
+								barras de control de golpe.</p>
+							<p>Pero el RBMK tenía un defecto encubierto para ahorrar costes de fabricación que firmó la
+								sentencia de muerte: <strong>las puntas de las barras de boro eran de grafito</strong>.
+								Al descender, lo primero que entró en la base del núcleo no fue el boro (que frena la
+								reacción), sino el grafito (que la acelera), desplazando además el último remanente de
+								agua de refrigeración.</p>
+							<p>La potencia térmica, en cuestión de milisegundos, saltó de 200 a más de <strong>33.000
+									megavatios</strong>. El intenso calor hizo añicos las pastillas de uranio. A las
+								01:23:44, una gigantesca explosión térmica (de vapor a presión extrema) destruyó el
+								núcleo, bloqueando las barras a mitad de camino y levantando la cubierta biológica
+								superior de 1.000 toneladas, apodada "Elena", lanzándola de costado. Segundos después,
+								el oxígeno entró en el grafito supercalentado, provocando una segunda explosión de
+								hidrógeno que voló el techo del edificio. Un haz de luz azul iridiscente (radiación de
+								Cherenkov) iluminó la noche. El núcleo nuclear había sido expuesto, vomitando millones
+								de partículas radiactivas al cielo abierto.</p>
+
+							<figure class="my-4 text-center">
+								<img src="img/sala_control.jpg" class="img-fluid rounded shadow-sm w-100"
+									style="max-height: 450px; object-fit: cover;" alt="La devastada Sala de Control 4">
+								<figcaption class="text-muted small mt-2 fw-semibold"><i
+										class="fa-solid fa-camera me-1"></i> La Sala de Control 4. Toptunov y Akimov no
+									huyeron tras la explosión. Se quedaron en la oscuridad intentando bombear agua al
+									núcleo manualmente, firmando su sentencia de muerte.</figcaption>
+							</figure>
+
+							<!-- 4. BOMBEROS, HOSPITAL Y RADIACIÓN FÍSICA -->
+							<h4 class="mono text-dark mt-5 mb-3 border-bottom pb-2">4. La agonía en el Hospital 126 y el
+								Síndrome de Irradiación</h4>
+							<p>Los bomberos de Prípiat fueron los primeros en llegar, sin ser informados de que lidiaban
+								con un incendio nuclear. Caminaron sobre bloques de grafito incandescente de las barras
+								de combustible. Los bomberos relataron un intenso sabor a sangre, metal y plomo en la
+								garganta. La radiación no quema con fuego; bombardea las células humanas a velocidad
+								supersónica, destrozando el ADN.</p>
+							<p>Esa madrugada, el <strong>Hospital 126</strong> se llenó de bomberos y operarios que
+								vomitaban profusamente. Sus caras se tornaron rojizas ("bronceado nuclear"). Las
+								enfermeras, sin equipo de protección, les despojaron de sus ropas radiactivas y las
+								arrojaron al sótano, donde <strong>hasta el día de hoy</strong>, ese montón de tela de
+								lona y cascos sigue emitiendo una radiación cientos de veces superior al fondo natural.
+							</p>
+							<p>Lo peor del <strong>Síndrome de Irradiación Aguda (ARS)</strong> es su "fase latente". A
+								los pocos días, los afectados parecieron recuperarse; bromeaban y caminaban. Pero era un
+								engaño biológico. La radiación había matado a su médula ósea. Días después, en el
+								Hospital Número 6 de Moscú, comenzó el infierno: sus glóbulos blancos desaparecieron,
+								sus sistemas inmunológicos se apagaron, las membranas mucosas se desintegraron y la piel
+								se ampolló, volviéndose negra y desprendiéndose del cuerpo. A medida que sus vasos
+								sanguíneos colapsaban, ni siquiera podían administrarles morfina. Murieron en una agonía
+								inimaginable, licuándose por dentro, y sus cuerpos eran tan letales que fueron
+								enterrados en Moscú dentro de ataúdes de zinc sellados bajo una capa de hormigón.</p>
+
+							<figure class="my-4 text-center">
+								<img src="img/sotano_hospital.jpg" class="img-fluid rounded shadow-sm w-100"
+									style="max-height: 450px; object-fit: cover;"
+									alt="Ropa de los bomberos en el sótano del hospital 126">
+								<figcaption class="text-muted small mt-2 fw-semibold"><i
+										class="fa-solid fa-camera me-1"></i> Sótano del Hospital 126. Las ropas
+									abandonadas de los primeros respondedores, congeladas en el tiempo, actúan como un
+									memorial radiactivo de la valentía humana frente al caos absoluto.</figcaption>
+							</figure>
+
+							<!-- 5. PRÍPIAT, EL PUENTE DE LA MUERTE Y LA POSTURA OFICIAL -->
+							<h4 class="mono text-dark mt-5 mb-3 border-bottom pb-2">5. El éxodo silencioso, el "Puente
+								de la Muerte" y la mentira rusa</h4>
+							<p>Mientras los bomberos agonizaban, la postura oficial del director
+								<strong>Bryukhanov</strong> y el ingeniero <strong>Fomin</strong> fue la negación
+								sistemática. Reportaron a Moscú un incendio de techo con niveles de radiación de "3.6
+								roentgens", sencillamente porque ese era el límite máximo de los pequeños dosímetros
+								portátiles que tenían a mano. La realidad rondaba los 15.000 roentgens por hora en el
+								exterior del reactor (el equivalente a millones de radiografías de tórax por minuto).
+							</p>
+							<p>Prípiat continuó su vida normal todo el sábado. Muchos ciudadanos, fascinados por el
+								pilar de luz azul iridiscente y los helicópteros, se agolparon en un puente ferroviario.
+								Observaron el incendio mientras una suave brisa dejaba caer ceniza radiactiva en su pelo
+								y ropa. Se le conoce como el <strong>"Puente de la Muerte"</strong>, pues se estima que
+								nadie de los que estuvo allí esa noche sobrevivió a las enfermedades consecuentes.</p>
+							<p>Solo 36 horas después, cuando científicos como <strong>Valery Legasov</strong> llegaron y
+								midieron el horror real, se ordenó la evacuación. 1.200 autobuses sacaron a 50.000
+								personas de Prípiat en apenas 3 horas, diciéndoles que volverían en tres días para
+								evitar el pánico. Al mundo exterior, la URSS le guardó silencio total, hasta que dos
+								días después, las alarmas de radiación saltaron en la central nuclear de Forsmark, ¡en
+								Suecia!, obligando a Moscú a confesar el "accidente".</p>
+
+							<figure class="my-5 text-center">
+								<img src="img/evacuacion_pripyat.png.webp" class="img-fluid rounded shadow-sm w-100"
+									style="max-height: 450px; object-fit: cover;" alt="Autobuses evacuando Prípiat">
+								<figcaption class="text-muted small mt-2 fw-semibold"><i
+										class="fa-solid fa-camera me-1"></i> El éxodo silencioso. Miles de autobuses
+									formaron una caravana interminable que vació la ciudad bajo engaños, dejando atrás
+									vidas enteras.</figcaption>
+							</figure>
+
+							<!-- 6. LOS HÉROES QUE SALVARON EUROPA (Buzos, Mineros, Pilotos) -->
+							<h4 class="mono text-dark mt-5 mb-3 border-bottom pb-2">6. Homenaje Heroico: Los hombres que
+								contuvieron el apocalipsis</h4>
+							<p>Lo que quedaba del reactor ardía de forma incontrolable, fundiendo el combustible, la
+								arena y el acero en una lava nuclear llamada <strong>"Corium"</strong>. Si este corium
+								derretía los cimientos y llegaba a las enormes piscinas de agua del sótano, el choque
+								térmico provocaría una explosión de entre 3 y 5 megatones. Las otras tres unidades
+								nucleares habrían volado por los aires, la nube radiactiva habría aniquilado la vida en
+								Kiev, contaminando los suministros de agua dulce de 30 millones de personas e
+								incapacitando el norte de Europa por siglos.</p>
+							<p>Para evitarlo, la respuesta humana fue titánica e inolvidable:</p>
+							<ul>
+								<li class="mb-2"><strong>Los Tres Buzos de Chernóbil:</strong> Los ingenieros Alexei
+									Ananenko, Valeri Bezpalov y Boris Baranov. Se ofrecieron para sumergirse en los
+									sótanos inundados bajo el reactor, oscuros y extremadamente radiactivos, para abrir
+									manualmente las válvulas y drenar el agua. Su heroísmo evitó la explosión térmica. A
+									diferencia de lo que narra la leyenda, no murieron días después; sobrevivieron al
+									desastre, siendo condecorados como Héroes de Ucrania décadas tarde.</li>
+								<li class="mb-2"><strong>Los Pilotos de Helicóptero:</strong> Liderados por el general
+									Antoshkin, realizaron miles de vuelos suicidas asomándose al cráter abierto a
+									temperaturas abrasadoras para arrojar miles de toneladas de arena, arcilla, plomo y
+									boro sobre el núcleo, asfixiando el incendio de grafito a costa de absorber dosis
+									letales de radiación.</li>
+								<li class="mb-2"><strong>Los Mineros de Tula:</strong> Trabajadores del carbón que
+									excavaron a mano, las 24 horas del día, un túnel de 150 metros justo bajo el reactor
+									en fusión para instalar un enorme intercambiador de calor de nitrógeno líquido,
+									trabajando a más de 50 grados Celsius sin ventilación, muchos de ellos sin camiseta,
+									sabiendo que estaban cavando bajo una bomba sucia.</li>
+							</ul>
+
+							<figure class="my-5 text-center">
+								<img src="img/helicopteros_chernobil.jpg" class="img-fluid rounded shadow-sm w-100"
+									style="max-height: 450px; object-fit: cover;"
+									alt="Helicópteros sobrevolando el reactor 4">
+								<figcaption class="text-muted small mt-2 fw-semibold"><i
+										class="fa-solid fa-camera me-1"></i> Misiones suicidas desde el aire. Los
+									pilotos sobrevolaron el fuego nuclear, asimilando radiación que atravesaba
+									directamente el fuselaje de las aeronaves.</figcaption>
+							</figure>
+
+							<!-- 7. LOS LIQUIDADORES Y LA PATA DE ELEFANTE -->
+							<h4 class="mono text-dark mt-5 mb-3 border-bottom pb-2">7. Los "Biorobots", la Pata de
+								Elefante y el Sarcófago</h4>
+							<p>El techo del colindante Reactor 3 quedó cubierto de grafito altamente irradiado. La URSS
+								compró avanzados robots a Japón y Alemania Occidental (el "Joker"), pero la extrema
+								radiación gamma frió sus microchips en horas. Sin máquinas, se usó sangre: nacieron los
+								<strong>Liquidadores ("Biorobots")</strong>.
+							</p>
+
+							<!-- FOTO INSERTADA: LIQUIDADORES (Usando el nombre exacto de la imagen subida) -->
+							<figure class="my-4 text-center">
+								<img src="img/liquidadores_techo.webp" class="img-fluid rounded shadow-sm w-100"
+									style="max-height: 450px; object-fit: cover;"
+									alt="Liquidadores en el techo de Chernóbil">
+								<figcaption class="text-muted small mt-2 fw-semibold"><i
+										class="fa-solid fa-camera me-1"></i> "Biorobots". Jóvenes soviéticos arrojando
+									grafito de vuelta al cráter bajo sentencias de 90 segundos que acortarían sus vidas
+									drásticamente.</figcaption>
+							</figure>
+
+							<p>Miles de jóvenes soldados fueron vestidos con delantales de plomo improvisados y enviados
+								al techo de la muerte (apodado "Masha"). La radiación era tan letal (hasta 12.000
+								roentgens) que solo podían estar expuestos durante <strong>90 segundos exactos</strong>.
+								Salían corriendo, daban tres paladas de escombros hacia el cráter, y volvían a entrar,
+								firmando con ello una drástica reducción de su esperanza de vida. Se calcula que hubo
+								alrededor de 600.000 liquidadores trabajando en toda la zona en los años posteriores,
+								limpiando calles, matando mascotas irradiadas y raspando tierra vegetal. Decenas de
+								miles morirían años después o vivirían con leucemia, cáncer y enfermedades crónicas, con
+								cifras reales ocultas tras los informes soviéticos que estancaron los muertos directos
+								oficiales en 31 personas.</p>
+							<p>En noviembre de 1986, lograron envolver los restos en el "Sarcófago", una inmensa tumba
+								de hormigón y acero que encerraba a la bestia. En sus entrañas, en los sótanos
+								derretidos, yace hoy la <strong>"Pata de Elefante"</strong>, una estalagmita de corium
+								macizo que, en los primeros meses, emitía suficiente radiación para garantizar una
+								muerte atroz a cualquiera que la mirara durante más de cinco minutos.</p>
+
+							<!-- FOTO: PATA DE ELEFANTE (Corregida con tu nombre de archivo exacto y sintaxis limpia) -->
+							<figure class="my-4 text-center">
+								<img src="img/pata_elefante.jpg" class="img-fluid rounded shadow-sm w-100"
+									style="max-height: 400px; object-fit: cover;"
+									alt="La letal pata de elefante de Chernóbil">
+								<figcaption class="text-muted small mt-2 fw-semibold"><i
+										class="fa-solid fa-camera me-1"></i> La Pata de Elefante. Fotografiada desde una
+									esquina con la cámara en una pértiga rodante para evitar la exposición letal
+									directa. Uno de los objetos más peligrosos creados en la historia de la Tierra.
+								</figcaption>
+							</figure>
+
+							<h4 class="mono text-dark mt-5 mb-3 border-bottom pb-2">8. El Juicio, la Verdad y la Zona de
+								Exclusión Hoy</h4>
+							<p>Tras el desastre, el director Bryukhanov, Fomin y el ingeniero jefe Dyatlov fueron
+								sentenciados a 10 años de campos de trabajo en un juicio teatro que eludió los defectos
+								del reactor. El verdadero héroe intelectual, el científico <strong>Valery
+									Legasov</strong>, documentó minuciosamente los fallos del RBMK en Viena, lo que le
+								valió el ostracismo de la KGB. Marginado, asolado por la enfermedad por radiación y el
+								dolor de los operarios muertos, Legasov se ahorcó el 26 de abril de 1988, exactamente a
+								los dos años del accidente. Dejó tras de sí cintas de audio innegables que obligaron a
+								la URSS a modificar por fin los demás reactores RBMK para evitar otro cataclismo.</p>
+							<p>Hoy en día, la <strong>Zona de Exclusión (CEZ)</strong> abarca 30 kilómetros a la redonda
+								controlados por el Estado Ucraniano. La vida humana permanente está prohibida, pero,
+								ante la ausencia del hombre, la naturaleza ha retomado el control de forma agresiva.
+								Lobos, osos y caballos de Przewalski dominan las calles llenas de vegetación.
+								Sorprendentemente, pese a tener mutaciones menores en flora y cataratas en fauna, los
+								animales prosperan. En 2016 se instaló sobre el reactor el <strong>Nuevo Confinamiento
+									Seguro (NSC)</strong>, una estructura masiva en forma de arco, la mayor jamás movida
+								por la humanidad, diseñada para asegurar los restos radiactivos al menos durante cien
+								años, mientras se investiga cómo desmantelar el núcleo letal que aún late debajo.</p>
+							<p>Resulta irónico, y muestra de las necesidades humanas, que los reactores 1, 2 y 3 de
+								Chernóbil continuaran generando electricidad. Sus valientes ingenieros cruzaron la zona
+								radiactiva cada día para trabajar, cerrando el último de ellos definitivamente en el año
+								2000.</p>
+
+							<div class="card border-dark mt-5 shadow-sm">
+								<div class="card-header bg-dark text-white mono fw-bold py-3 text-uppercase">
+									<i class="fa-solid fa-scale-balanced me-2"></i> Fukushima vs Chernóbil: El Veredicto
+									Final a la Energía Nuclear
+								</div>
+								<div class="card-body bg-white p-4 p-md-5">
+									<p class="mb-4 lead text-dark text-justify">La Escala INES (Escala Internacional de
+										Sucesos Nucleares) solo tiene siete niveles. Solo dos eventos en la historia
+										humana la han coronado: Chernóbil en 1986 y Fukushima Daiichi (Japón) en 2011.
+										Analizar ambos es imperativo para comprender por qué la radiación no fue el arma
+										homicida de 1986; el arma fue la mentira y el desprecio ético.</p>
+
+									<div class="row g-5">
+										<div class="col-md-6 border-end">
+											<h5 class="fw-bold text-danger mb-4"><i class="fa-solid fa-hammer me-2"></i>
+												Chernóbil (URSS, 1986): El crimen del orgullo</h5>
+											<ul class="text-muted mb-0 lh-lg text-justify">
+												<li class="mb-3"><strong>La génesis del desastre:</strong> No hubo
+													ningún terremoto en Ucrania. El accidente fue manufacturado al 100%
+													por la negligencia de los operarios bajo coacción, el diseño barato
+													del reactor y el secretismo de un Estado que censuró los manuales de
+													seguridad porque la URSS "no podía permitirse cometer fallos".</li>
+												<li class="mb-3"><strong>Falta de escudo y contención:</strong> Los
+													soviéticos ahorraron en los edificios de protección primaria. Cuando
+													el RBMK explotó, no había bóveda que contuviera la onda de choque.
+													El reactor escupió su núcleo incandescente como un volcán abierto al
+													cielo europeo.</li>
+												<li class="mb-3"><strong>Negligencia Civil:</strong> La falta de
+													información fue un genocidio biológico. Evacuaron Prípiat tarde,
+													pero al resto de aldeas, nunca. No se distribuyeron pastillas de
+													yodo estable para saturar la glándula tiroides. Consecuencia: miles
+													de niños contrajeron cáncer al beber leche de vacas que habían
+													pastado en hierba contaminada con yodo-131.</li>
+												<li><strong>Uso de "Carne de Cañón":</strong> La URSS resolvió un
+													problema del siglo XX arrojando masas humanas (Liquidadores) con
+													palas al fuego, exigiendo a sus ciudadanos que pagaran con sangre y
+													mutaciones genéticas el precio de los errores políticos y las
+													deficiencias tecnológicas de los burócratas.</li>
+											</ul>
+										</div>
+										<div class="col-md-6">
+											<h5 class="fw-bold text-primary mb-4"><i class="fa-solid fa-water me-2"></i>
+												Fukushima (Japón, 2011): La humildad geológica</h5>
+											<ul class="text-muted mb-0 lh-lg text-justify">
+												<li class="mb-3"><strong>La génesis natural:</strong> Japón sufrió el
+													terremoto de Tōhoku de magnitud 9.0. Los reactores BWR funcionaron
+													perfectamente ante el seísmo: los sensores paralizaron la reacción
+													en cadena en segundos, insertando el boro. El desastre ocurrió
+													porque un tsunami imprevisible de 15 metros ahogó el sistema de
+													refrigeración diésel. El mar, y no un botón de control, asfixió la
+													planta.</li>
+												<li class="mb-3"><strong>Contención Efectiva:</strong> Los reactores
+													japoneses disponían de múltiples capas de acero y hormigón de alta
+													contención. Aunque el calor sin refrigeración causó explosiones de
+													hidrógeno y tres fusiones de núcleo parciales, los edificios
+													retuvieron en su inmensa mayoría la radiación severa en el suelo,
+													evitando que Japón y el mundo quedaran sumidos en nubes letales
+													libres.</li>
+												<li class="mb-3"><strong>Transparencia y Evacuación Rápida:</strong> Se
+													declaró la alerta inmediatamente. Se ordenó la evacuación masiva de
+													casi 150.000 ciudadanos con información constante. El saldo de
+													muertos por radiación aguda en civiles fue de cero. Las tragedias y
+													bajas surgieron del brutal estrés del desalojo masivo y las
+													consecuencias físicas del propio tsunami, no del envenenamiento
+													celular por radiación.</li>
+												<li><strong>Mitigación Ética:</strong> Japón abordó el desastre con alta
+													tecnología y con el valor de operarios veteranos (Los 50 de
+													Fukushima), voluntarios que sabían exactamente las dosis
+													dosimétricas que estaban asimilando. Hoy en día se invierten
+													millones en retirar meticulosamente el suelo vegetal contaminado,
+													logrando que muchos refugiados puedan volver a sus tierras
+													recuperadas.</li>
+											</ul>
+										</div>
+									</div>
+
+									<figure class="my-5 text-center">
+										<img src="img/fukushima_tsunami.webp" class="img-fluid rounded shadow-sm w-100"
+											style="max-height: 400px; object-fit: cover;"
+											alt="El tsunami golpeando la central de Fukushima Daiichi">
+										<figcaption class="text-muted small mt-2 fw-semibold"><i
+												class="fa-solid fa-water me-1"></i> La furia del océano. Mientras
+											Chernóbil fue un colapso de diseño y soberbia humana, Fukushima sucumbió
+											ante un muro de agua que ahogó sus defensas pasivas.</figcaption>
+									</figure>
+
+									<hr class="my-5">
+									<h5 class="mono text-dark text-center fw-bold mb-3">Conclusión: El Pacto Faustiano
+										del Átomo</h5>
+									<p class="text-dark mb-4 text-justify">
+										La energía nuclear es, por naturaleza técnica, la fuente de energía base más
+										limpia y segura inventada por el hombre; sin emisiones de carbono que alteren el
+										clima, ha demostrado ser estadísticamente infinitamente menos letal que un siglo
+										respirando la polución del carbón o el petróleo. Pero es una energía que no
+										admite mediocridad. Exige un protocolo de acero, una seguridad pasiva
+										imperturbable y una transparencia institucional absoluta. No perdona los
+										recortes, la soberbia, ni la opacidad.
+									</p>
+									<p class="text-dark mb-0 fw-bold text-center">
+										Chernóbil no es un testimonio del peligro de la ciencia, sino de la brutalidad
+										de la mentira política. Realizar la expedición a Prípiat y pisar los confines
+										del Sarcófago con CE Explorer no es un mero acto de exploración turística. Es
+										enfrentarse cara a cara con la historia materializada; un monumento y memorial a
+										aquellos cientos de miles de trabajadores anónimos que bajaron a los infiernos
+										para limpiar con sus propias manos la negligencia del Estado y evitar que Europa
+										dejara de existir.
+									</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div id="footer-container" class="mt-auto"></div>
+
+	<div id="google_translate_element" style="display:none;"></div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript"
+		src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

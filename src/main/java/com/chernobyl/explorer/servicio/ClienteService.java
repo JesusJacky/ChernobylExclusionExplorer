@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.chernobyl.explorer.entidades.Cliente;
 import com.chernobyl.explorer.excepciones.ElementoNoEncontradaException;
+import com.chernobyl.explorer.excepciones.ValidacionNegocioException;
 import com.chernobyl.explorer.repositorio.ClienteRepository;
 
 @Service
@@ -17,106 +18,112 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepository;
 
-	/**
-	 * Lista todos los clientes
-	 * 
-	 * @return lista de todos los clientes
-	 */
 	public List<Cliente> listarTodos() {
 		return clienteRepository.findAll();
 	}
 
-	/**
-	 * Busca a un cliente por id
-	 * 
-	 * @param id
-	 * @return un cliente por id
-	 */
 	public Cliente buscarPorId(Integer id) {
 		return clienteRepository.findById(id)
 				.orElseThrow(() -> new ElementoNoEncontradaException("Cliente no encontrado con el ID " + id));
 	}
 
-	/**
-	 * Crea un nuevo cliente
-	 * 
-	 * @param cliente
-	 * @return
-	 */
 	public Cliente crear(Cliente cliente) {
+		LocalDate hoy = LocalDate.now();
+
+		if (cliente.getFechaNacimiento() != null) {
+			long edad = ChronoUnit.YEARS.between(cliente.getFechaNacimiento(), hoy);
+
+			if (edad < 18 && !Boolean.TRUE.equals(cliente.isConsentimiento())) {
+				throw new ValidacionNegocioException(
+						"Los menores de edad requieren consentimiento explícito por sus tutores legales.");
+			}
+		}
+
 		return clienteRepository.save(cliente);
 	}
 
-	/**
-	 * Elimina un cliente
-	 * 
-	 * @param id
-	 */
-	public void eliminar(Integer id) {
-		if (clienteRepository.existsById(id)) {
-			clienteRepository.deleteById(id);
-		} else {
-			throw new ElementoNoEncontradaException("Cliente no encontrado con el ID " + id);
-		}
-	}
-	
-	public void eliminarCliente(Integer id) {
-		Cliente cliente = clienteRepository.findById(id)
-				.orElseThrow(() -> new ElementoNoEncontradaException("Cliente no encontrado con el ID " + id));
-		
-		cliente.setActivo(false);
-		cliente.setFechaBaja(LocalDate.now());
-		
-		clienteRepository.save(cliente);
+	public Cliente actualizar(Integer id, Cliente clienteModificado) {
+		Cliente clienteExistente = buscarPorId(id);
+
+		clienteExistente.setNombre(clienteModificado.getNombre());
+		clienteExistente.setApellido1(clienteModificado.getApellido1());
+		clienteExistente.setApellido2(clienteModificado.getApellido2());
+		clienteExistente.setDni(clienteModificado.getDni());
+		clienteExistente.setFechaNacimiento(clienteModificado.getFechaNacimiento());
+		clienteExistente.setNacionalidad(clienteModificado.getNacionalidad());
+		clienteExistente.setEmail(clienteModificado.getEmail());
+		clienteExistente.setTelefono(clienteModificado.getTelefono());
+
+		return clienteRepository.save(clienteExistente);
 	}
 
-	/**
-	 * Busca a un cliente por nacionalidad y filtra si es mayor de edad
-	 * 
-	 * @param nacionalidad
-	 * @param edad
-	 * @return lista completa de los clientes filtrados por la nacionalidad y
-	 *         mayor de edad
-	 */
-	public List<Cliente> buscarPorNacionalidadYMayorDeEdad(String nacionalidad) {
+	public void eliminar(Integer id) {
+		Cliente clienteExistente = buscarPorId(id);
+		clienteRepository.delete(clienteExistente);
+	}
+
+	public Cliente darDeBaja(Integer id) {
+		Cliente clienteExistente = buscarPorId(id);
+		clienteExistente.setActivo(false);
+		clienteExistente.setFechaBaja(LocalDate.now()); // Registramos el momento de la baja
+		return clienteRepository.save(clienteExistente);
+	}
+
+	public List<Cliente> buscarPorNacionalidad(String nacionalidad) {
 		List<Cliente> todosClientes = clienteRepository.findAll();
 
-		LocalDate hoy = LocalDate.now();
-
-		int mayoriaEdad = 18;
-
 		List<Cliente> resultado = todosClientes.stream()
-				.filter(c -> ChronoUnit.YEARS.between(c.getFechaNacimiento(), hoy) >= mayoriaEdad
-						&& c.igualNacionalidad(nacionalidad))
+				.filter(c -> c.getNacionalidad() != null && c.getNacionalidad().equalsIgnoreCase(nacionalidad))
 				.toList();
 
 		if (resultado.isEmpty()) {
 			throw new ElementoNoEncontradaException(
-					"No se ha encontrado un cliente con la nacionalidad " + nacionalidad + " y que sea mayor de edad");
+					"No se ha encontrado un cliente con la nacionalidad " + nacionalidad);
 		}
-
 		return resultado;
 	}
 
-	/**
-	 * Busca un cliente y lo filtra por edad
-	 * @return lista completa de los clientes filtrador por menor de edad
-	 */
 	public List<Cliente> filtrarPorMenorDeEdad() {
 		List<Cliente> todosClientes = clienteRepository.findAll();
-
 		LocalDate hoy = LocalDate.now();
-
 		int mayoriaEdad = 18;
 
 		List<Cliente> resultado = todosClientes.stream()
-				.filter(c -> c.getFechaNacimiento() != null && ChronoUnit.YEARS.between(c.getFechaNacimiento(), hoy) < mayoriaEdad)
-				.filter(c -> c.getActivo() == true).toList();
+				.filter(c -> c.getFechaNacimiento() != null
+						&& ChronoUnit.YEARS.between(c.getFechaNacimiento(), hoy) < mayoriaEdad)
+				.filter(c -> Boolean.TRUE.equals(c.getActivo())).toList();
 
 		if (resultado.isEmpty()) {
-			throw new ElementoNoEncontradaException("No se ha encontrado menor de edad");
+			throw new ElementoNoEncontradaException("No se ha encontrado ningún menor de edad activo.");
 		}
 		return resultado;
 	}
 
+	public Cliente buscarPorDni(String dni) {
+		List<Cliente> todosClientes = clienteRepository.findAll();
+
+		return todosClientes.stream().filter(c -> c.getDni().equalsIgnoreCase(dni)).findFirst()
+				.orElseThrow(() -> new ElementoNoEncontradaException("No se ha encontrado al cliente con DNI " + dni));
+	}
+
+	// ====================================================================
+	// NUEVO MÉTODO: Búsqueda por Teléfono
+	// ====================================================================
+	public Cliente buscarPorTelefono(String telefono) {
+		List<Cliente> todosClientes = clienteRepository.findAll();
+
+		return todosClientes.stream().filter(c -> c.getTelefono() != null && c.getTelefono().equalsIgnoreCase(telefono))
+				.findFirst().orElseThrow(() -> new ElementoNoEncontradaException(
+						"No se ha encontrado registro con el teléfono " + telefono));
+	}
+
+	// ====================================================================
+	// NUEVO MÉTODO: Reactivación Lógica
+	// ====================================================================
+	public Cliente reactivar(Integer id) {
+		Cliente clienteExistente = buscarPorId(id);
+		clienteExistente.setActivo(true);
+		clienteExistente.setFechaBaja(null); // Limpiamos la fecha de baja al volver a estar activo
+		return clienteRepository.save(clienteExistente);
+	}
 }

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SBU - Panel de Administración</title>
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+		rel="stylesheet">
+</head>
+
+<body class="sbu-intranet d-flex flex-column min-vh-100">
+
+	<div id="navbar-container"></div>
+
+	<div class="container-fluid px-4 py-4 flex-grow-1">
+		<div class="row mb-4">
+			<div class="col-12">
+				<h4 class="mono fw-bold text-corporate border-bottom border-corporate pb-2">
+					<i class="fa-solid fa-server me-2"></i>ADMINISTRACIÓN DEL SISTEMA
+				</h4>
+			</div>
+		</div>
+
+		<div class="row g-4">
+			<div class="col-lg-3">
+				<div class="card mb-4 shadow-sm rounded-3 border-corporate">
+					<div class="card-header mono small fw-bold text-corporate border-corporate"><i
+							class="fa-solid fa-id-card-clip me-2"></i>Credenciales Activas</div>
+					<div class="card-body text-center py-4 bg-dark">
+						<i class="fa-solid fa-user-tie fa-4x text-corporate mb-3"></i>
+						<h5 class="fw-bold mb-0 text-uppercase text-white" id="empNombre">Cargando...</h5>
+						<p class="small mb-3 text-muted-sbu" id="empApellidos"></p>
+						<div class="d-flex justify-content-center gap-2 mono small">
+							<span class="badge badge-sbu-dark border border-secondary" id="empCuenta">...</span>
+							<span class="badge badge-sbu-accent shadow-sm text-dark" id="empRol">...</span>
+						</div>
+						<div class="d-flex justify-content-center mt-3">
+							<span
+								class="badge border border-corporate text-white-50 mono py-1 px-2 fw-normal rounded-pill"
+								id="empCodigoInterno">
+								<i class="fa-solid fa-barcode me-1"></i> LEYENDO...
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div id="moduloAdminRH" class="card shadow-sm rounded-3 bg-accent-soft border border-corporate d-none">
+					<div class="card-header mono small fw-bold text-corporate border-corporate"><i
+							class="fa-solid fa-users-gear me-2"></i>Gestión de Personal</div>
+					<div class="card-body bg-dark">
+						<p class="small mb-3 text-white-50">Administración de credenciales para nuevos empleados y
+							supervisores de área.</p>
+						<button id="btnAbrirModalAltaEmpleado"
+							class="btn btn-sbu-accent w-100 mono fw-bold text-uppercase text-dark rounded-2">
+							<i class="fa-solid fa-user-plus me-2"></i>Dar de Alta
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-9">
+				<div class="row g-4 h-100">
+					<div class="col-md-4">
+						<div class="card shadow-sm rounded-3 h-100 border-corporate">
+							<div class="card-header mono small fw-bold text-corporate border-corporate"><i
+									class="fa-solid fa-users-viewfinder me-2"></i>Personal en Línea</div>
+							<div class="card-body p-0 bg-dark">
+								<ul class="list-group list-group-flush mono small" id="listaEmpleadosActivos">
+									<li class="list-group-item bg-transparent text-center text-muted-sbu py-4 border-0">
+										<i class="fa-solid fa-satellite-dish fa-spin me-2"></i>Buscando señales...
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-8">
+						<div class="card shadow-sm rounded-3 h-100 border-corporate bg-dark">
+							<div
+								class="card-header mono small fw-bold text-corporate border-corporate d-flex justify-content-between align-items-center">
+								<span><i class="fa-solid fa-clock-rotate-left me-2"></i>Resoluciones Pendientes</span>
+								<span class="badge bg-danger">Top 10 Próximas</span>
+							</div>
+							<div class="card-body p-0 table-responsive">
+								<table class="table table-dark table-hover align-middle mb-0 mono"
+									style="font-size: 0.85rem;">
+									<thead class="text-muted-sbu" style="border-bottom: 2px solid var(--sbu-border);">
+										<tr>
+											<th class="bg-transparent fw-normal">LOCALIZADOR</th>
+											<th class="bg-transparent fw-normal">FECHA VIAJE</th>
+											<th class="bg-transparent fw-normal text-center">PRIORIDAD</th>
+											<th class="bg-transparent fw-normal text-end">ACCIÓN</th>
+										</tr>
+									</thead>
+									<tbody id="tablaReservasPendientes">
+										<tr>
+											<td colspan="4"
+												class="text-center text-muted-sbu py-5 bg-transparent border-0">
+												<i
+													class="fa-solid fa-satellite-dish fa-spin fa-2x mb-2 opacity-50"></i><br>
+												ESPERANDO DATOS...
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer-container" class="mt-auto"></div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/script.js"></script>
+</body>
+
+</html>

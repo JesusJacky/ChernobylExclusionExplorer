@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SBU - Gestión de Reservas</title>
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+		rel="stylesheet">
+</head>
+
+<body class="sbu-intranet d-flex flex-column min-vh-100">
+
+	<div id="navbar-container"></div>
+
+	<div class="container-fluid px-4 py-4 flex-grow-1">
+		<div class="row mb-4">
+			<div class="col-12 d-flex justify-content-between align-items-end border-bottom border-corporate pb-2">
+				<h4 class="mono fw-bold text-corporate mb-0">
+					<i class="fa-solid fa-clipboard-list me-2"></i>CONTROL DE EXPEDICIONES
+				</h4>
+				<button class="btn btn-sm btn-outline-secondary mono" id="btnInvertirOrden"
+					title="Invertir orden cronológico">
+					<i class="fa-solid fa-arrow-down-short-wide me-1" id="iconoOrden"></i> Invertir Fecha
+				</button>
+			</div>
+		</div>
+
+		<div class="row g-4">
+			<div class="col-lg-3">
+				<div class="card shadow-sm rounded-3 border-corporate">
+					<div class="card-header mono small fw-bold text-corporate border-corporate"><i
+							class="fa-solid fa-id-card-clip me-2"></i>Credenciales Activas</div>
+					<div class="card-body text-center py-4 bg-dark">
+						<i class="fa-solid fa-user-tie fa-4x text-corporate mb-3"></i>
+						<h5 class="fw-bold mb-0 text-uppercase text-white" id="empNombre">Cargando...</h5>
+						<p class="small mb-3 text-muted-sbu" id="empApellidos"></p>
+						<div class="d-flex justify-content-center gap-2 mono small">
+							<span class="badge badge-sbu-dark border border-secondary" id="empCuenta">...</span>
+							<span class="badge badge-sbu-accent shadow-sm text-dark" id="empRol">...</span>
+						</div>
+						<div class="d-flex justify-content-center mt-3">
+							<span
+								class="badge border border-corporate text-white-50 mono py-1 px-2 fw-normal rounded-pill"
+								id="empCodigoInterno">
+								<i class="fa-solid fa-barcode me-1"></i> LEYENDO...
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-9">
+				<div class="row g-3 mb-3 bg-dark p-3 rounded border border-corporate mx-0">
+					<div class="col-md-6">
+						<label class="form-label text-white-50 small mono">Filtrar por Estado</label>
+						<select id="filtroEstadoReserva"
+							class="form-select form-select-sm bg-dark text-white border-secondary mono">
+							<option value="PENDIENTE" selected>🔴 Mostrar: Pendientes (Prioridad)</option>
+							<option value="CONFIRMADA">🟢 Mostrar: Aprobadas / Confirmadas</option>
+							<option value="CANCELADA">⚫ Mostrar: Canceladas / Rechazadas</option>
+							<option value="TODAS">⚪ Mostrar: Todo el Historial</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<label class="form-label text-white-50 small mono">Búsqueda por Localizador</label>
+						<div class="input-group input-group-sm">
+							<span class="input-group-text bg-dark border-secondary text-muted-sbu"><i
+									class="fa-solid fa-magnifying-glass"></i></span>
+							<input type="text" id="buscadorLocalizador"
+								class="form-control bg-dark text-white border-secondary mono"
+								placeholder="Escriba LOC-...">
+						</div>
+					</div>
+				</div>
+
+				<div class="card shadow-sm rounded-3 border-corporate bg-dark">
+					<div class="card-body p-0 table-responsive" style="max-height: 500px; overflow-y: auto;">
+						<table class="table table-dark table-hover align-middle mb-0 mono" style="font-size: 0.9rem;">
+							<thead class="text-muted-sbu sticky-top bg-dark"
+								style="border-bottom: 2px solid var(--sbu-border); z-index: 1;">
+								<tr>
+									<th class="bg-transparent fw-normal">LOCALIZADOR</th>
+									<th class="bg-transparent fw-normal">FECHA SOLICITADA</th>
+									<th class="bg-transparent fw-normal">EXPEDICIÓN</th>
+									<th class="bg-transparent fw-normal text-center">ESTADO</th>
+									<th class="bg-transparent fw-normal text-end">ACCIÓN</th>
+								</tr>
+							</thead>
+							<tbody id="tablaGestorReservas">
+								<tr>
+									<td colspan="5" class="text-center text-muted-sbu py-5 bg-transparent border-0">
+										<i class="fa-solid fa-satellite-dish fa-spin fa-2x mb-3 opacity-50"></i><br>
+										SINCRONIZANDO...
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalExpedienteSBU" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<form id="formModificarReservaSBU" class="modal-content bg-dark border-corporate shadow-lg">
+				<div class="modal-header border-corporate text-white">
+					<h5 class="modal-title mono fw-bold text-corporate"><i
+							class="fa-solid fa-folder-open me-2"></i>EXPEDIENTE: <span id="modLoc">---</span></h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body p-4 text-white">
+					<input type="hidden" id="modIdReserva">
+					<div class="row g-3 mb-4 pb-3 border-bottom border-secondary">
+						<div class="col-md-6">
+							<p class="small text-muted-sbu mb-1 mono">Paquete Vinculado:</p>
+							<p class="fw-bold mb-0" id="modPaquete">---</p>
+						</div>
+						<div class="col-md-6 text-md-end">
+							<p class="small text-muted-sbu mb-1 mono">Estado Actual:</p>
+							<h5 class="mb-0"><span class="badge bg-secondary mono" id="modEstado">---</span></h5>
+						</div>
+					</div>
+
+					<h6 class="mono text-corporate mb-3">Formulario de Edición Permitida:</h6>
+					<div class="row g-3">
+						<div class="col-md-4">
+							<label class="form-label text-white-50 small mono">Fecha de Viaje</label>
+							<input type="date" id="modFechaViaje"
+								class="form-control bg-dark text-white border-secondary mono" required>
+						</div>
+						<div class="col-md-4">
+							<label class="form-label text-white-50 small mono">Teléfono Contacto</label>
+							<input type="text" id="modTelefono"
+								class="form-control bg-dark text-white border-secondary mono" required>
+						</div>
+						<div class="col-md-4">
+							<label class="form-label text-white-50 small mono">Email Contacto</label>
+							<input type="email" id="modEmail"
+								class="form-control bg-dark text-white border-secondary mono" required>
+						</div>
+						<div class="col-12">
+							<label class="form-label text-white-50 small mono">Observaciones del Cliente / SBU</label>
+							<textarea id="modObservaciones"
+								class="form-control bg-dark text-white border-secondary mono" rows="2"></textarea>
+						</div>
+					</div>
+
+					<div class="mt-4 pt-3 border-top border-secondary">
+						<p class="small text-muted-sbu mb-2 fw-bold mono">Lista de Acceso Autorizado (Viajeros):</p>
+						<ul class="list-group list-group-flush mono small border border-secondary rounded"
+							id="modViajeros"></ul>
+					</div>
+				</div>
+
+				<div class="modal-footer border-corporate bg-dark d-flex justify-content-between">
+					<div>
+						<button type="button" class="btn btn-success mono fw-bold d-none" id="btnAprobarSBU"><i
+								class="fa-solid fa-check me-2"></i>Aprobar</button>
+						<button type="button" class="btn btn-danger mono fw-bold d-none" id="btnRechazarSBU"><i
+								class="fa-solid fa-ban me-2"></i>Rechazar</button>
+					</div>
+					<div>
+						<button type="button" class="btn btn-outline-secondary mono fw-bold"
+							data-bs-dismiss="modal">Cerrar</button>
+						<button type="submit" class="btn btn-sbu-accent mono fw-bold text-dark"><i
+								class="fa-solid fa-floppy-disk me-2"></i>Actualizar Datos</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="footer-container" class="mt-auto"></div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>SBU - Herramientas de Auditoría</title>
+	<link href="/css/style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="sbu-intranet d-flex flex-column min-vh-100">
+
+	<div id="navbar-container"></div>
+
+	<div class="container py-5 flex-grow-1">
+
+		<div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-corporate pb-3">
+			<h3 class="text-white mono mb-0"><i class="fa-solid fa-shield-halved me-2"></i>TERMINAL DE AUDITORÍA SBU
+			</h3>
+		</div>
+
+		<div class="row g-4 mb-3">
+			<div class="col-md-4">
+				<div class="card bg-dark border-corporate h-100 shadow">
+					<div class="card-body">
+						<h6 class="text-corporate mono fw-bold mb-3"><i class="fa-solid fa-id-card me-2"></i>Por
+							DNI/Pasaporte</h6>
+						<div class="input-group">
+							<input type="text" id="inputDniAudit"
+								class="form-control bg-transparent text-white border-corporate mono"
+								placeholder="Ej: 12345678A">
+							<button class="btn btn-sbu-accent mono fw-bold" id="btnBuscarDni"><i
+									class="fa-solid fa-magnifying-glass"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card bg-dark border-corporate h-100 shadow">
+					<div class="card-body">
+						<h6 class="text-corporate mono fw-bold mb-3"><i class="fa-solid fa-phone me-2"></i>Por Teléfono
+						</h6>
+						<div class="input-group">
+							<input type="text" id="inputTelefonoAudit"
+								class="form-control bg-transparent text-white border-corporate mono"
+								placeholder="Ej: +34600000000">
+							<button class="btn btn-sbu-accent mono fw-bold" id="btnBuscarTelefono"><i
+									class="fa-solid fa-magnifying-glass"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card bg-dark border-corporate h-100 shadow">
+					<div class="card-body">
+						<h6 class="text-corporate mono fw-bold mb-3"><i class="fa-solid fa-earth-europe me-2"></i>Filtro
+							Demográfico</h6>
+						<div class="input-group">
+							<input type="text" id="inputNacionalidadAudit"
+								class="form-control bg-transparent text-white border-corporate mono"
+								placeholder="País...">
+							<button class="btn btn-sbu-accent mono fw-bold" id="btnBuscarNacionalidad">Filtrar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row g-4 mb-4">
+			<div class="col-md-4">
+				<div class="card bg-dark border-corporate h-100 shadow">
+					<div class="card-body d-flex align-items-center">
+						<button class="btn btn-danger mono fw-bold w-100 py-2" id="btnBuscarMenores">
+							<i class="fa-solid fa-child me-2"></i>Detectar Menores Activos
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card bg-dark border-corporate h-100 shadow">
+					<div class="card-body d-flex align-items-center">
+						<button class="btn btn-warning mono fw-bold w-100 py-2 text-dark" id="btnBuscarInactivos">
+							<i class="fa-solid fa-user-slash me-2"></i>Mostrar Inactivos
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card bg-dark border-corporate h-100 shadow">
+					<div class="card-body d-flex align-items-center">
+						<button class="btn btn-outline-info mono fw-bold w-100 py-2" id="btnMostrarTodos">
+							<i class="fa-solid fa-users me-2"></i>Mostrar Censo Completo
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card bg-transparent border-corporate shadow mt-4">
+			<div
+				class="card-header border-corporate d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+				<span class="text-corporate mono fw-bold">SALIDA DE DATOS</span>
+
+				<div class="d-flex gap-2 w-100 justify-content-md-end align-items-center">
+					<select id="selectOrdenacionAudit"
+						class="form-select form-select-sm bg-dark text-white border-corporate mono d-none"
+						style="max-width: 250px;">
+						<option value="defecto">Orden por Registro (Defecto)</option>
+						<option value="alfabetico">Alfabético (A-Z)</option>
+						<option value="edad_desc">Nacimiento (Más jóvenes primero)</option>
+						<option value="edad_asc">Nacimiento (Más mayores primero)</option>
+						<option value="consentimiento">Sin Consentimiento primero</option>
+					</select>
+					<button id="btnExportarCsv" class="btn btn-sm btn-sbu-accent mono d-none text-nowrap">
+						<i class="fa-solid fa-file-csv me-2"></i>Manifiesto CSV
+					</button>
+				</div>
+			</div>
+			<div class="card-body p-0">
+				<div id="mensajeErrorAudit" class="alert alert-danger mono m-3 d-none"></div>
+				<div class="table-responsive">
+					<table class="table table-dark table-hover mb-0 mono" style="font-size: 0.9rem;">
+						<thead>
+							<tr class="border-corporate text-muted-sbu">
+								<th>DNI</th>
+								<th>NOMBRE COMPLETO</th>
+								<th>NACIONALIDAD</th>
+								<th>NACIMIENTO</th>
+								<th>CONTACTO</th>
+								<th class="text-center">ESTADO</th>
+							</tr>
+						</thead>
+						<tbody id="tablaResultadosAudit">
+							<tr>
+								<td colspan="6" class="text-center py-4 text-muted-sbu">ESPERANDO ORDENES...</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="modal fade" id="modalEdicionClienteAudit" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content bg-dark text-white border-corporate shadow-lg">
+				<div class="modal-header border-corporate pb-2">
+					<h5 class="modal-title mono fw-bold text-corporate"><i
+							class="fa-solid fa-user-shield me-2"></i>INSPECCIÓN DE EXPEDIENTE</h5>
+					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+						aria-label="Close"></button>
+				</div>
+				<div class="modal-body p-4">
+
+					<div id="alertaEdicionAudit" class="alert d-none mono small fw-bold"></div>
+
+					<div class="row">
+						<div
+							class="col-md-4 text-center border-end border-secondary mb-3 mb-md-0 d-flex flex-column align-items-center">
+							<div class="bg-dark text-white rounded d-flex align-items-center justify-content-center position-relative shadow"
+								style="width: 140px; height: 170px; border: 2px solid #ffc107; overflow: hidden;">
+								<img id="auditAvatarPreview" src="" class="position-absolute w-100 h-100 d-none"
+									style="object-fit: cover; z-index: 1;">
+								<i id="auditDefaultAvatarIcon"
+									class="fa-solid fa-user-astronaut fa-4x text-white-50 position-relative"></i>
+							</div>
+
+							<label for="inputAuditAvatar" class="btn btn-sm btn-outline-warning mono mt-3 w-100">
+								<i class="fa-solid fa-camera me-1"></i> Cambiar Foto
+							</label>
+							<input type="file" id="inputAuditAvatar" accept="image/*" class="d-none">
+
+							<div class="mt-auto pt-3 w-100">
+								<button type="button" id="btnDarBajaAudit"
+									class="btn btn-outline-danger btn-sm mono fw-bold w-100 mb-2">
+									<i class="fa-solid fa-skull-crossbones me-1"></i> Dar de Baja
+								</button>
+								<button type="button" id="btnDarAltaAudit"
+									class="btn btn-outline-success btn-sm mono fw-bold w-100 d-none">
+									<i class="fa-solid fa-heart-pulse me-1"></i> Reactivar
+								</button>
+							</div>
+						</div>
+
+						<div class="col-md-8 ps-md-4">
+							<form id="formEdicionClienteAudit">
+								<input type="hidden" id="editIdAudit">
+								<input type="hidden" id="editActivoAudit">
+
+								<div class="row g-2 mono small">
+									<div class="col-md-6 mb-2">
+										<label class="text-white-50">DNI/Pasaporte (Inmutable)</label>
+										<input type="text" id="editDniAudit"
+											class="form-control bg-secondary border-0 text-white" readonly>
+									</div>
+									<div class="col-md-6 mb-2">
+										<label class="text-white-50">Fecha Nacimiento</label>
+										<input type="date" id="editNacimientoAudit"
+											class="form-control bg-dark border-corporate text-white" required>
+									</div>
+									<div class="col-12 mb-2">
+										<label class="text-white-50">Nombre Completo</label>
+										<input type="text" id="editNombreAudit"
+											class="form-control bg-dark border-corporate text-white" required>
+									</div>
+									<div class="col-md-6 mb-2">
+										<label class="text-white-50">Primer Apellido</label>
+										<input type="text" id="editApe1Audit"
+											class="form-control bg-dark border-corporate text-white" required>
+									</div>
+									<div class="col-md-6 mb-2">
+										<label class="text-white-50">Segundo Apellido</label>
+										<input type="text" id="editApe2Audit"
+											class="form-control bg-dark border-corporate text-white">
+									</div>
+									<div class="col-md-12 mb-2">
+										<label class="text-white-50">Nacionalidad</label>
+										<input type="text" id="editNacionalidadAudit"
+											class="form-control bg-dark border-corporate text-white" required>
+									</div>
+									<div class="col-md-6 mb-2">
+										<label class="text-white-50">Teléfono</label>
+										<input type="text" id="editTelefonoAudit"
+											class="form-control bg-dark border-corporate text-white" required>
+									</div>
+									<div class="col-md-6 mb-2">
+										<label class="text-white-50">Email</label>
+										<input type="email" id="editEmailAudit"
+											class="form-control bg-dark border-corporate text-white" required>
+									</div>
+								</div>
+
+								<div class="text-end mt-3 border-top border-secondary pt-3">
+									<button type="submit" id="btnGuardarEdicionAudit"
+										class="btn btn-sbu-accent mono fw-bold">
+										<i class="fa-solid fa-floppy-disk me-2"></i>Forzar Actualización
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer-container" class="mt-auto"></div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/script.js"></script>
+</body>
+
+</html>

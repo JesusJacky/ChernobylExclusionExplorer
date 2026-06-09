@@ -6,48 +6,60 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chernobyl.explorer.entidades.NivelPeligro;
+import com.chernobyl.explorer.excepciones.ElementoNoEncontradaException;
 import com.chernobyl.explorer.repositorio.NivelPeligroRepository;
 
+/**
+ * Servicio encargado de gestionar los niveles de peligrosidad radiológica.
+ * Aunque su controlador esté desactivado, este servicio provee la lógica interna
+ * necesaria para vincular las nuevas expediciones con su nivel correspondiente.
+ */
 @Service
 public class NivelPeligroService {
 
 	@Autowired
 	private NivelPeligroRepository nivelPeligroRepository;
 
-	// Listar todos los Niveles
+	/**
+	 * Recupera el catálogo completo de niveles de peligro (BAJO, MEDIO, ALTO).
+	 * * @return Lista con los niveles disponibles en la base de datos.
+	 */
 	public List<NivelPeligro> listarNiveles() {
 		return nivelPeligroRepository.findAll();
 	}
 
-	// Buscar nivel por id
+	/**
+	 * Busca un nivel de peligrosidad específico por su ID.
+	 * Utilizado internamente al crear nuevos paquetes de viaje para asignarles su nivel.
+	 * * @param id El identificador del nivel (ej. 1 para BAJO).
+	 * @return El objeto {@link NivelPeligro} encontrado.
+	 * @throws ElementoNoEncontradaException Si el ID no existe en el catálogo.
+	 */
 	public NivelPeligro buscarPorId(Integer id) {
 		return nivelPeligroRepository.findById(id)
-				.orElseThrow(() -> new RuntimeException("Nivel de peligro no encontrado con el ID " + id));
+				.orElseThrow(() -> new ElementoNoEncontradaException("Nivel de peligro no encontrado con el ID " + id));
 	}
 
-	// Buscar nivel por nombre
-	/*public Optional<NivelPeligro> findByName(String nombre) {
-		return nivelPeligroRepository.findByName(nombre);
-
-	}*/
-
-	// Crear nivel
+	/**
+	 * Registra un nuevo nivel de peligrosidad. 
+	 * Reservado para uso interno o futura escalabilidad desde un panel de administración.
+	 * * @param nivelPeligro El objeto a persistir.
+	 * @return El nivel guardado.
+	 */
 	public NivelPeligro crear(NivelPeligro nivelPeligro) {
 		return nivelPeligroRepository.save(nivelPeligro);
 	}
 
-	// Eliminar un nivel
+	/**
+	 * Elimina un nivel de peligrosidad de la base de datos.
+	 * * @param id El identificador del nivel a borrar.
+	 * @throws ElementoNoEncontradaException Si se intenta borrar un nivel que no existe.
+	 */
 	public void eliminar(Integer id) {
 		if (nivelPeligroRepository.existsById(id)) {
 			nivelPeligroRepository.deleteById(id);
 		} else {
-			throw new RuntimeException("Nivel de peligro no encontrado con el ID " + id);
+			throw new ElementoNoEncontradaException("Nivel de peligro no encontrado con el ID " + id);
 		}
 	}
-
-	public boolean existsById(Integer id) {
-		// TODO Auto-generated method stub
-		return nivelPeligroRepository.existsById(id);
-	}
-
 }

@@ -2,25 +2,36 @@ package com.chernobyl.explorer.entidades;
 
 import java.util.Objects;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.Pattern;
 
+/**
+ * Entidad de catálogo estático que categoriza la peligrosidad de las zonas de la central.
+ * Regula los topes de radiación absorbible y el tiempo máximo que un grupo puede permanecer en un área.
+ */
 @Entity
-public class NivelPeligro extends DomainEntity{
+@Schema(description = "Categoría estática de peligrosidad radiológica que define los límites de una zona.")
+public class NivelPeligro extends DomainEntity {
 
+	@Schema(description = "Categoría oficial de la zona.", allowableValues = {"BAJO", "MEDIO", "ALTO"}, requiredMode = Schema.RequiredMode.REQUIRED)
 	@Pattern(regexp = "^BAJO|MEDIO|ALTO$")
 	private String nivel;
-	private double nivelRoengents;
+	
+	@Schema(description = "Límite máximo de radiación ambiental en la zona, medida en miliSieverts (mSv).", example = "2.5")
+	private double nivelMsv; 
+	
+	@Schema(description = "Tiempo máximo permitido de estancia ininterrumpida en minutos.", example = "120")
 	private int tiempoMaximoExposicion;
 
 	public NivelPeligro() {
 		super();
 	}
 
-	public NivelPeligro(String nivel, double nivelRoengents, int tiempoMaximoExposicion) {
+	public NivelPeligro(String nivel, double nivelMsv, int tiempoMaximoExposicion) {
 		super();
 		this.nivel = nivel;
-		this.nivelRoengents = nivelRoengents;
+		this.nivelMsv = nivelMsv;
 		this.tiempoMaximoExposicion = tiempoMaximoExposicion;
 	}
 
@@ -32,12 +43,12 @@ public class NivelPeligro extends DomainEntity{
 		this.nivel = nivel;
 	}
 
-	public double getNivelRoengents() {
-		return nivelRoengents;
+	public double getNivelMsv() {
+		return nivelMsv;
 	}
 
-	public void setNivelRoengents(double nivelRoengents) {
-		this.nivelRoengents = nivelRoengents;
+	public void setNivelMsv(double nivelMsv) {
+		this.nivelMsv = nivelMsv;
 	}
 
 	public int getTiempoMaximoExposicion() {
@@ -55,14 +66,10 @@ public class NivelPeligro extends DomainEntity{
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
 		NivelPeligro other = (NivelPeligro) obj;
 		return Objects.equals(nivel, other.nivel);
 	}
-
 }

@@ -1,0 +1,16 @@
+======================================================================
+PROPIEDAD INTELECTUAL - PROYECTO SBU (Chernobyl Exclusion Explorer)
+======================================================================
+Este software es una obra original desarrollada por Jesús Hidalgo Rodríguez.
+
+Todos los derechos de propiedad intelectual, incluyendo el código fuente,
+la arquitectura del backend y el diseño de la interfaz, están protegidos 
+por las leyes de propiedad intelectual vigentes.
+
+Cualquier uso no autorizado, distribución, copia, modificación o 
+explotación comercial de este proyecto está estrictamente prohibido.
+
+La entrega de este código para fines académicos no implica la cesión 
+de derechos de autor a terceros ni autoriza su uso fuera del entorno 
+de evaluación del instituto.
+======================================================================

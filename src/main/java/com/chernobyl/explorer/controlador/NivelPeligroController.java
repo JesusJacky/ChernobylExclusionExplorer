@@ -1,5 +1,5 @@
-package com.chernobyl.explorer.controlador;
-
+//package com.chernobyl.explorer.controlador;
+//
 //import java.util.List;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ package com.chernobyl.explorer.controlador;
 //import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
 //import org.springframework.web.bind.annotation.RestController;
 //
 //import com.chernobyl.explorer.entidades.NivelPeligro;
@@ -48,14 +47,6 @@ package com.chernobyl.explorer.controlador;
 //		return ResponseEntity.status(HttpStatus.CREATED).body(nuevoNivelPeligro);
 //	}
 //	
-//	// Buscar por nombre
-////	@GetMapping("/buscar")
-////	public ResponseEntity<NivelPeligro> buscarPorNombre(@RequestParam String nombre){
-////		return nivelPeligroService.findByName(nombre)
-////				.map(ResponseEntity::ok)
-////				.orElse(ResponseEntity.notFound().build());
-////	}
-//	
 //	@DeleteMapping("/{id}")
 //	public ResponseEntity<Void> eliminar(@PathVariable Integer id){
 //		try {
@@ -65,5 +56,4 @@ package com.chernobyl.explorer.controlador;
 //			return ResponseEntity.notFound().build();
 //		}
 //	}
-//
 //}
