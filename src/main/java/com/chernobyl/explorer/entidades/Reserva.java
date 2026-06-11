@@ -46,7 +46,7 @@ public class Reserva extends DomainEntity {
 	private String observaciones;
 
 	@Schema(description = "Teléfono de contacto español (comienza por 6, 7, 8 o 9 y tiene 9 dígitos).", example = "600123456")
-	@Pattern(regexp = "^([6789]\\d{8})?$")
+	@Pattern(regexp = "^(\\+?[0-9]{9,15})?$")
 	private String telefono;
 
 	@Schema(description = "Listado de expedicionarios vinculados a esta solicitud.")

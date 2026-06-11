@@ -58,10 +58,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // BLOQUE 2: UTILIDADES (Sesión, Idiomas y Meteorología)
     // =========================================================================
     const idiomasInternacionales = {
+        // Principales europeos
         "es": "Spanish (ES)", "en": "English (EN)", "de": "German (DE)", "fr": "French (FR)",
-        "uk": "Ukrainian (UK)", "zh-CN": "Chinese (Simplified) (ZH)", "hi": "Hindi (HI)",
-        "ar": "Arabic (AR)", "ru": "Russian (RU)", "ja": "Japanese (JA)", "it": "Italiano (IT)",
-        "pt": "Portuguese (PT)", "nl": "Dutch (NL)", "pl": "Polish (PL)", "tr": "Turkish (TR)"
+        "it": "Italian (IT)", "pt": "Portuguese (PT)", "nl": "Dutch (NL)", "pl": "Polish (PL)",
+        "ru": "Russian (RU)", "uk": "Ukrainian (UK)", "be": "Belarusian (BE)", "bg": "Bulgarian (BG)",
+        "cs": "Czech (CS)", "da": "Danish (DA)", "et": "Estonian (ET)", "fi": "Finnish (FI)",
+        "el": "Greek (EL)", "hu": "Hungarian (HU)", "is": "Icelandic (IS)", "ga": "Irish (GA)",
+        "lv": "Latvian (LV)", "lt": "Lithuanian (LT)", "no": "Norwegian (NO)", "ro": "Romanian (RO)",
+        "sk": "Slovak (SK)", "sl": "Slovenian (SL)", "sv": "Swedish (SV)", "tr": "Turkish (TR)",
+
+        // Cooficiales y regionales España
+        "ca": "Catalan (CA)", "eu": "Basque (EU)", "gl": "Galician (GL)",
+
+        // Asiáticos y Oriente Medio
+        "zh-CN": "Chinese (Simplified) (ZH)", "zh-TW": "Chinese (Traditional) (ZH-TW)",
+        "ja": "Japanese (JA)", "ko": "Korean (KO)", "hi": "Hindi (HI)", "ar": "Arabic (AR)",
+        "he": "Hebrew (HE)", "fa": "Persian (FA)", "ur": "Urdu (UR)", "bn": "Bengali (BN)",
+        "vi": "Vietnamese (VI)", "th": "Thai (TH)", "id": "Indonesian (ID)", "ms": "Malay (MS)",
+        "tl": "Tagalog (TL)", "ka": "Georgian (KA)", "hy": "Armenian (HY)",
+
+        // Africanos y otros
+        "sw": "Swahili (SW)", "am": "Amharic (AM)", "yo": "Yoruba (YO)", "zu": "Zulu (ZU)",
+        "af": "Afrikaans (AF)", "sq": "Albanian (SQ)", "bs": "Bosnian (BS)", "hr": "Croatian (HR)",
+        "sr": "Serbian (SR)", "mk": "Macedonian (MK)"
     };
 
     function inicializarIdiomas() {

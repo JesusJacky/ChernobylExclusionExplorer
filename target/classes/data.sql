@@ -85,7 +85,7 @@ INSERT INTO usuario (cuenta, clave, rol, ultima_conexion) VALUES
 ('pablo.n', 'clave123', 'ROLE_CLIENTE', '2026-06-10T19:00:00');
 
 -- ==========================================================
--- 4. RESERVAS (Con precios ajustados a los nuevos paquetes premium)
+-- 4. RESERVAS (Ampliadas a 25 para cubrir a los grupos)
 -- ==========================================================
 INSERT INTO reserva (fecha_viaje, email_contacto, precio_total, confirmacion_mayor_edad, estado, localizador_cliente, observaciones, telefono, tipo_paquete_id) VALUES
 ('2026-07-10', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-001', 'Madrugador', '+34600000001', 1),
@@ -102,13 +102,23 @@ INSERT INTO reserva (fecha_viaje, email_contacto, precio_total, confirmacion_may
 ('2026-09-09', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'PENDIENTE', 'LOC-012', NULL, '+34600000012', 2),
 ('2026-10-25', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'CONFIRMADA', 'LOC-013', 'Desea guía oficial en inglés', '+34600000013', 9),
 ('2026-10-10', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'PENDIENTE', 'LOC-014', 'Interesado en sesión fotográfica', '+34600000014', 5),
-('2026-08-01', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-015', 'Cliente repetidor', '+34600000015', 6);
+('2026-08-01', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-015', 'Cliente repetidor', '+34600000015', 6),
+('2026-07-15', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-016', 'Grupo de amigos', '+34600000016', 1),
+('2026-08-10', 'proyecto.chernobyl.explorer@gmail.com', 6000.0, 1, 'PENDIENTE', 'LOC-017', 'Revisar pasaportes', '+34600000017', 4),
+('2026-09-01', 'proyecto.chernobyl.explorer@gmail.com', 8000.0, 1, 'CONFIRMADA', 'LOC-018', NULL, '+34600000018', 2),
+('2026-10-15', 'proyecto.chernobyl.explorer@gmail.com', 22000.0, 1, 'CANCELADA', 'LOC-019', 'Motivos personales', '+34600000019', 7),
+('2026-11-20', 'proyecto.chernobyl.explorer@gmail.com', 10500.0, 1, 'CONFIRMADA', 'LOC-020', 'Llegan en tren', '+34600000020', 5),
+('2026-12-05', 'proyecto.chernobyl.explorer@gmail.com', 38000.0, 1, 'PENDIENTE', 'LOC-021', 'Alergia al yodo', '+34600000021', 8),
+('2026-07-28', 'proyecto.chernobyl.explorer@gmail.com', 11500.0, 1, 'CONFIRMADA', 'LOC-022', NULL, '+34600000022', 3),
+('2026-08-22', 'proyecto.chernobyl.explorer@gmail.com', 15000.0, 1, 'CONFIRMADA', 'LOC-023', 'Documentalistas', '+34600000023', 6),
+('2026-09-18', 'proyecto.chernobyl.explorer@gmail.com', 55000.0, 1, 'PENDIENTE', 'LOC-024', 'Confirmar hotel', '+34600000024', 9),
+('2026-10-30', 'proyecto.chernobyl.explorer@gmail.com', 4500.0, 1, 'CONFIRMADA', 'LOC-025', 'Viaje fotográfico', '+34600000025', 1);
 
 -- ==========================================================
--- 5. CENSOS / FICHAS PERSONALES (Asociados secuencialmente al id_usuario)
+-- 5. CENSOS / FICHAS PERSONALES (Con reservas asignadas)
 -- ==========================================================
 INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacionalidad, consentimiento, id_reserva_cliente, email, telefono, id_usuario, activo, fecha_alta, fecha_baja) VALUES 
--- FICHAS EMPLEADOS (Mapeados a los IDs 1 al 10)
+-- FICHAS EMPLEADOS (No viajan, id_reserva_cliente = NULL)
 ('Director', 'Sistema', NULL, '00000000A', '1970-01-01', 'Ucraniana', 1, NULL, 'admin@sbu.gov', '000000000', 1, true, '2025-01-01', NULL),
 ('José', 'Álvarez', 'Martín', '11111111S', '1980-01-01', 'Española', 1, NULL, 'jose@sbu.gov', '600000001', 2, true, '2025-01-01', NULL),
 ('Mario', 'Pérez', 'García', '22222222E', '1995-05-05', 'Española', 1, NULL, 'mario@sbu.gov', '600000002', 3, true, '2025-01-01', NULL),
@@ -120,44 +130,44 @@ INSERT INTO cliente (nombre, apellido1, apellido2, dni, fecha_nacimiento, nacion
 ('Dmytro', 'Shevchenko', NULL, '99999999S', '1993-06-08', 'Ucraniana', 1, NULL, 'dmytro@sbu.gov', '+380500000004', 9, true, '2025-01-01', NULL),
 ('Carlos', 'Ruiz', 'Alonso', '10101010C', '1987-12-05', 'Española', 1, NULL, 'carlos@sbu.gov', '600000010', 10, true, '2025-01-01', NULL),
 
--- FICHAS CLIENTES (Mapeados a los IDs 11 al 50)
-('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, NULL, 'victor@mail.com', '+34600111222', 11, true, '2025-12-01', NULL),
-('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, NULL, 'elena@mail.com', '+34600111223', 12, true, '2025-12-01', NULL),
-('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, NULL, 'alex@mail.com', '+34600111224', 13, true, '2025-12-01', NULL),
-('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, NULL, 'antonio@mail.com', '+34600111225', 14, true, '2025-12-01', NULL),
-('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, NULL, 'beatriz@mail.com', '+34600111226', 15, true, '2025-12-01', NULL),
-('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, NULL, 'igor@mail.com', '+34600111227', 16, false, '2025-12-01', '2026-03-15'),
-('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, NULL, 'carmen@mail.com', '+34600111228', 17, false, '2025-12-01', '2026-04-20'),
-('Sven', 'Lund', NULL, '55555555T', '1998-12-05', 'Sueca', 1, NULL, 'sven@mail.com', '+34600111229', 18, false, '2025-12-01', '2026-05-10'),
-('Yuki', 'Sato', NULL, '66666666Y', '2010-07-20', 'Japonesa', 1, NULL, 'yuki_padres@mail.com', '+81900111230', 19, true, '2025-12-01', NULL),
-('Mateo', 'Ricci', NULL, '77777777U', '2012-03-15', 'Italiana', 0, NULL, 'mateo_tutor@mail.com', '+39600111231', 20, true, '2025-12-01', NULL),
-('Paula', 'Ortiz', 'Girona', '88888888I', '2009-01-10', 'Española', 0, NULL, 'paula_madre@mail.com', '+34600111232', 21, true, '2025-12-01', NULL),
-('Adrián', 'Méndez', NULL, '99999999O', '2011-06-14', 'Española', 1, NULL, 'adrian_padre@mail.com', '+34600111233', 22, true, '2025-12-01', NULL),
-('Daniel', 'Kuznetsov', NULL, '12312312P', '1990-10-10', 'Ucraniana', 1, NULL, 'daniel@mail.com', '+380600111234', 23, true, '2025-12-01', NULL),
-('Leo', 'García', 'Sanz', '23423423A', '1992-05-05', 'Argentina', 1, NULL, 'leo@mail.com', '+549110111235', 24, true, '2025-12-01', NULL),
-('Emma', 'Watson', NULL, '34534534S', '1994-08-19', 'Británica', 1, NULL, 'emma@mail.com', '+44700111236', 25, true, '2025-12-01', NULL),
-('Hiroki', 'Tanaka', NULL, '45645645D', '1996-02-28', 'Japonesa', 1, NULL, 'hiroki@mail.com', '+81900111237', 26, true, '2025-12-01', NULL),
-('Sara', 'Müller', NULL, '56756756F', '1998-11-11', 'Alemana', 1, NULL, 'sara@mail.com', '+49150111238', 27, true, '2025-12-01', NULL),
-('Noah', 'Dubois', NULL, '67867867G', '1991-03-01', 'Francesa', 1, NULL, 'noah@mail.com', '+33600111239', 28, true, '2025-12-01', NULL),
-('Sofía', 'Pereira', NULL, '78978978H', '1993-12-25', 'Portuguesa', 1, NULL, 'sofia@mail.com', '+351900111240', 29, true, '2025-12-01', NULL),
-('Liam', 'O Connor', NULL, '89089089J', '1962-07-07', 'Irlandesa', 1, NULL, 'liam@mail.com', '+353800111241', 30, true, '2025-12-01', NULL),
-('Fatima', 'Zahra', NULL, '90190190K', '1995-02-14', 'Marroquí', 1, NULL, 'fatima@mail.com', '+212600111242', 31, true, '2025-12-01', NULL),
-('Andrés', 'Bello', 'Paz', '01201201L', '1989-10-31', 'Chilena', 1, NULL, 'andres@mail.com', '+56900111243', 32, true, '2025-12-01', NULL),
-('Clara', 'Zetkin', NULL, '12341234M', '1950-06-20', 'Alemana', 1, NULL, 'clara@mail.com', '+49150111244', 33, false, '2025-12-01', '2026-01-10'),
-('Biel', 'Vila', 'Junyent', '54325432N', '1997-09-09', 'Española', 1, NULL, 'biel@mail.com', '+34600111245', 34, true, '2025-12-01', NULL),
-('Dimitri', 'Sokolov', NULL, '98769876B', '1980-05-20', 'Ucraniana', 1, NULL, 'dimitri@mail.com', '+380600111246', 35, false, '2025-12-01', '2026-02-28'),
-('Valentina', 'Gómez', NULL, '65436543V', '1999-04-04', 'Mexicana', 1, NULL, 'valentina@mail.com', '+52550111247', 36, true, '2025-12-01', NULL),
-('Oliver', 'Smith', NULL, '11112222Z', '1991-01-01', 'Británica', 1, NULL, 'oliver@mail.com', '+44700111248', 37, true, '2025-12-01', NULL),
-('Marta', 'Krawczyk', NULL, '33334444X', '1995-12-12', 'Polaca', 1, NULL, 'marta@mail.com', '+48500111249', 38, true, '2025-12-01', NULL),
-('Lucas', 'Moreno', 'Díaz', '44445555C', '2015-11-10', 'Española', 0, NULL, 'lucas_padres@mail.com', '+34600111250', 39, true, '2025-12-01', NULL),
-('Chloe', 'Bourgeois', NULL, '55556666V', '1997-08-22', 'Francesa', 1, NULL, 'chloe@mail.com', '+33600111251', 40, false, '2025-12-01', '2026-06-01'),
-('Nadia', 'Popova', NULL, '12121212N', '1996-04-11', 'Rusa', 1, NULL, 'nadia@mail.com', '+79001112233', 41, true, '2025-12-01', NULL),
-('Taro', 'Yamamoto', NULL, '13131313T', '1989-10-22', 'Japonesa', 1, NULL, 'taro@mail.com', '+819011112244', 42, true, '2025-12-01', NULL),
-('Isabella', 'Rossi', NULL, '14141414I', '2000-01-15', 'Italiana', 1, NULL, 'isabella@mail.com', '+393001112255', 43, true, '2025-12-01', NULL),
-('Miguel', 'Torres', 'Cruz', '15151515M', '1975-08-08', 'Mexicana', 1, NULL, 'miguel@mail.com', '+525511112266', 44, true, '2025-12-01', NULL),
-('Chen', 'Wei', NULL, '16161616C', '1994-11-30', 'China', 1, NULL, 'chen@mail.com', '+8613011112277', 45, true, '2025-12-01', NULL),
-('Amelia', 'Evans', NULL, '17171717A', '1983-05-18', 'Británica', 1, NULL, 'amelia@mail.com', '+447700112288', 46, true, '2025-12-01', NULL),
-('Hugo', 'Silva', 'Gomes', '18181818H', '1991-09-02', 'Brasileña', 1, NULL, 'hugo@mail.com', '+5511900112299', 47, true, '2025-12-01', NULL),
-('Lars', 'Jensen', NULL, '19191919L', '1986-12-14', 'Danesa', 1, NULL, 'lars@mail.com', '+4520112233', 48, true, '2025-12-01', NULL),
-('Mia', 'Johansson', NULL, '20202020M', '2005-02-27', 'Sueca', 1, NULL, 'mia@mail.com', '+46701112244', 49, true, '2025-12-01', NULL),
-('Pablo', 'Navarro', 'Roca', '21212121P', '1998-07-07', 'Española', 1, NULL, 'pablo@mail.com', '+34600112255', 50, true, '2025-12-01', NULL);
+-- FICHAS CLIENTES (Asignados a las 25 reservas formando grupos)
+('Victor', 'Fernandez', 'Gomez', '12345678A', '1990-05-15', 'Española', 1, 1, 'victor@mail.com', '+34600111222', 11, true, '2025-12-01', NULL),
+('Elena', 'Martinez', NULL, '87654321B', '1992-08-20', 'Española', 1, 1, 'elena@mail.com', '+34600111223', 12, true, '2025-12-01', NULL),
+('Alex', 'Kravchenko', NULL, '11223344C', '1985-03-10', 'Ucraniana', 1, 2, 'alex@mail.com', '+34600111224', 13, true, '2025-12-01', NULL),
+('Antonio', 'Serrano', 'Vila', '11111111Q', '1955-11-03', 'Española', 1, 2, 'antonio@mail.com', '+34600111225', 14, true, '2025-12-01', NULL),
+('Beatriz', 'Lugo', NULL, '22222222W', '1968-04-25', 'Mexicana', 1, 3, 'beatriz@mail.com', '+34600111226', 15, true, '2025-12-01', NULL),
+('Igor', 'Volkov', NULL, '33333333E', '1972-09-12', 'Ucraniana', 1, 4, 'igor@mail.com', '+34600111227', 16, false, '2025-12-01', '2026-03-15'),
+('Carmen', 'Jiménez', 'Ruiz', '44444444R', '1984-01-30', 'Española', 1, 4, 'carmen@mail.com', '+34600111228', 17, false, '2025-12-01', '2026-04-20'),
+('Sven', 'Lund', NULL, '55555555T', '1998-12-05', 'Sueca', 1, 5, 'sven@mail.com', '+34600111229', 18, false, '2025-12-01', '2026-05-10'),
+('Yuki', 'Sato', NULL, '66666666Y', '2010-07-20', 'Japonesa', 1, 6, 'yuki_padres@mail.com', '+81900111230', 19, true, '2025-12-01', NULL),
+('Mateo', 'Ricci', NULL, '77777777U', '2012-03-15', 'Italiana', 0, 6, 'mateo_tutor@mail.com', '+39600111231', 20, true, '2025-12-01', NULL),
+('Paula', 'Ortiz', 'Girona', '88888888I', '2009-01-10', 'Española', 0, 7, 'paula_madre@mail.com', '+34600111232', 21, true, '2025-12-01', NULL),
+('Adrián', 'Méndez', NULL, '99999999O', '2011-06-14', 'Española', 1, 7, 'adrian_padre@mail.com', '+34600111233', 22, true, '2025-12-01', NULL),
+('Daniel', 'Kuznetsov', NULL, '12312312P', '1990-10-10', 'Ucraniana', 1, 8, 'daniel@mail.com', '+380600111234', 23, true, '2025-12-01', NULL),
+('Leo', 'García', 'Sanz', '23423423A', '1992-05-05', 'Argentina', 1, 8, 'leo@mail.com', '+549110111235', 24, true, '2025-12-01', NULL),
+('Emma', 'Watson', NULL, '34534534S', '1994-08-19', 'Británica', 1, 9, 'emma@mail.com', '+44700111236', 25, true, '2025-12-01', NULL),
+('Hiroki', 'Tanaka', NULL, '45645645D', '1996-02-28', 'Japonesa', 1, 10, 'hiroki@mail.com', '+81900111237', 26, true, '2025-12-01', NULL),
+('Sara', 'Müller', NULL, '56756756F', '1998-11-11', 'Alemana', 1, 10, 'sara@mail.com', '+49150111238', 27, true, '2025-12-01', NULL),
+('Noah', 'Dubois', NULL, '67867867G', '1991-03-01', 'Francesa', 1, 11, 'noah@mail.com', '+33600111239', 28, true, '2025-12-01', NULL),
+('Sofía', 'Pereira', NULL, '78978978H', '1993-12-25', 'Portuguesa', 1, 12, 'sofia@mail.com', '+351900111240', 29, true, '2025-12-01', NULL),
+('Liam', 'O Connor', NULL, '89089089J', '1962-07-07', 'Irlandesa', 1, 12, 'liam@mail.com', '+353800111241', 30, true, '2025-12-01', NULL),
+('Fatima', 'Zahra', NULL, '90190190K', '1995-02-14', 'Marroquí', 1, 13, 'fatima@mail.com', '+212600111242', 31, true, '2025-12-01', NULL),
+('Andrés', 'Bello', 'Paz', '01201201L', '1989-10-31', 'Chilena', 1, 14, 'andres@mail.com', '+56900111243', 32, true, '2025-12-01', NULL),
+('Clara', 'Zetkin', NULL, '12341234M', '1950-06-20', 'Alemana', 1, 15, 'clara@mail.com', '+49150111244', 33, false, '2025-12-01', '2026-01-10'),
+('Biel', 'Vila', 'Junyent', '54325432N', '1997-09-09', 'Española', 1, 15, 'biel@mail.com', '+34600111245', 34, true, '2025-12-01', NULL),
+('Dimitri', 'Sokolov', NULL, '98769876B', '1980-05-20', 'Ucraniana', 1, 16, 'dimitri@mail.com', '+380600111246', 35, false, '2025-12-01', '2026-02-28'),
+('Valentina', 'Gómez', NULL, '65436543V', '1999-04-04', 'Mexicana', 1, 16, 'valentina@mail.com', '+52550111247', 36, true, '2025-12-01', NULL),
+('Oliver', 'Smith', NULL, '11112222Z', '1991-01-01', 'Británica', 1, 17, 'oliver@mail.com', '+44700111248', 37, true, '2025-12-01', NULL),
+('Marta', 'Krawczyk', NULL, '33334444X', '1995-12-12', 'Polaca', 1, 18, 'marta@mail.com', '+48500111249', 38, true, '2025-12-01', NULL),
+('Lucas', 'Moreno', 'Díaz', '44445555C', '2015-11-10', 'Española', 0, 18, 'lucas_padres@mail.com', '+34600111250', 39, true, '2025-12-01', NULL),
+('Chloe', 'Bourgeois', NULL, '55556666V', '1997-08-22', 'Francesa', 1, 19, 'chloe@mail.com', '+33600111251', 40, false, '2025-12-01', '2026-06-01'),
+('Nadia', 'Popova', NULL, '12121212N', '1996-04-11', 'Rusa', 1, 20, 'nadia@mail.com', '+79001112233', 41, true, '2025-12-01', NULL),
+('Taro', 'Yamamoto', NULL, '13131313T', '1989-10-22', 'Japonesa', 1, 20, 'taro@mail.com', '+819011112244', 42, true, '2025-12-01', NULL),
+('Isabella', 'Rossi', NULL, '14141414I', '2000-01-15', 'Italiana', 1, 21, 'isabella@mail.com', '+393001112255', 43, true, '2025-12-01', NULL),
+('Miguel', 'Torres', 'Cruz', '15151515M', '1975-08-08', 'Mexicana', 1, 22, 'miguel@mail.com', '+525511112266', 44, true, '2025-12-01', NULL),
+('Chen', 'Wei', NULL, '16161616C', '1994-11-30', 'China', 1, 22, 'chen@mail.com', '+8613011112277', 45, true, '2025-12-01', NULL),
+('Amelia', 'Evans', NULL, '17171717A', '1983-05-18', 'Británica', 1, 23, 'amelia@mail.com', '+447700112288', 46, true, '2025-12-01', NULL),
+('Hugo', 'Silva', 'Gomes', '18181818H', '1991-09-02', 'Brasileña', 1, 24, 'hugo@mail.com', '+5511900112299', 47, true, '2025-12-01', NULL),
+('Lars', 'Jensen', NULL, '19191919L', '1986-12-14', 'Danesa', 1, 24, 'lars@mail.com', '+4520112233', 48, true, '2025-12-01', NULL),
+('Mia', 'Johansson', NULL, '20202020M', '2005-02-27', 'Sueca', 1, 25, 'mia@mail.com', '+46701112244', 49, true, '2025-12-01', NULL),
+('Pablo', 'Navarro', 'Roca', '21212121P', '1998-07-07', 'Española', 1, 25, 'pablo@mail.com', '+34600112255', 50, true, '2025-12-01', NULL);
